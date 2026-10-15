@@ -1,6 +1,243 @@
 {
   "sourceLanguage": "en",
   "strings": {
+        "Plan settings": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "計畫設定"}}
+        } },
+        "over": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "超出"}}
+        } },
+        "kcal left": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "kcal 可吃"}}
+        } },
+        "eaten": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "已吃"}}
+        } },
+        "eaten · +%lld%%": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "已吃 · +%lld%%"}}
+        } },
+        "workout · +%@ food": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "運動 · 多吃 %@"}}
+        } },
+        "workout burn": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "運動消耗"}}
+        } },
+        "allowed": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "可吃上限"}}
+        } },
+        "Add food": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "記錄飲食"}}
+        } },
+        "FAT": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "脂肪"}}
+        } },
+        "burned": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "消耗"}}
+        } },
+        "deficit": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "赤字"}}
+        } },
+        "fat burned today": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "今天燒掉的脂肪"}}
+        } },
+        "fat stored today": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "今天囤積的脂肪"}}
+        } },
+        "Burned": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "消耗"}}
+        } },
+        "%@ from workouts": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "運動 %@"}}
+        } },
+        "No workout yet": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "今天還沒運動"}}
+        } },
+        "Goal 10,000": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "目標 10,000"}}
+        } },
+        "FOOD TODAY": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "今天吃了什麼"}}
+        } },
+        "Nothing logged yet.": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "還沒有紀錄。"}}
+        } },
+        "%lld g protein": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "蛋白質 %lld g"}}
+        } },
+        "GOAL": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "目標"}}
+        } },
+        "Goal reached: %@ kg": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "已達標：%@ kg"}}
+        } },
+        "Lose %@ kg → %@ kg by %@": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "再減 %1$@ kg，%3$@ 前到 %2$@ kg"}}
+        } },
+        "Done. Set a new goal any time.": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "完成了！隨時可以設新目標。"}}
+        } },
+        "Log 2 full days to see if you're on track": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "完整記錄 2 天後就能看進度"}}
+        } },
+        "Not losing lately: eat less or move more": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "最近沒在掉：少吃一點或多動一點"}}
+        } },
+        "On track: you'll get there %@": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "進度正常：預計 %@ 達標"}}
+        } },
+        "1 day behind: you'll get there %@": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "落後 1 天：預計 %@ 達標"}}
+        } },
+        "%lld days behind: you'll get there %@": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "落後 %1$lld 天：預計 %2$@ 達標"}}
+        } },
+        "TODAY'S PLAN": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "今天的計畫"}}
+        } },
+        "Eat up to **%@ kcal**": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "最多吃 **%@ kcal**"}}
+        } },
+        "Burn **%@ kcal** in workouts": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "運動消耗 **%@ kcal**"}}
+        } },
+        "Set weight": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "輸入體重"}}
+        } },
+        "%@ now": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "目前 %@"}}
+        } },
+        "What did you eat? (optional)": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "吃了什麼？（選填）"}}
+        } },
+        "Protein, g (optional)": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "蛋白質 g（選填）"}}
+        } },
+        "Taiwan favorites": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "台灣常吃"}}
+        } },
+        "Typical portions, so treat the numbers as estimates.": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "以常見份量估算，數字僅供參考。"}}
+        } },
+        "Optional. If you weigh yourself somewhere, enter it here and the estimate restarts from it.": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "選填。在哪裡量過體重就填進來，估算會從這個數字重新開始。"}}
+        } },
+        "You": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "你的資料"}}
+        } },
+        "Goal": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "目標"}}
+        } },
+        "Starting weight": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "起始體重"}}
+        } },
+        "Deficit from": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "赤字來源"}}
+        } },
+        "Food only": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "只靠飲食"}}
+        } },
+        "%lld%% food · %lld%% workout": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "飲食 %1$lld%% · 運動 %2$lld%%"}}
+        } },
+        "Protein target": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "蛋白質目標"}}
+        } },
+        "Logging buffer": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "記錄緩衝"}}
+        } },
+        "Eat back extra workout": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "多運動可多吃"}}
+        } },
+        "None": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "不吃回"}}
+        } },
+        "Half": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "一半"}}
+        } },
+        "BMR": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "基礎代謝"}}
+        } },
+        "Maintenance (no workouts)": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "維持熱量（不含運動）"}}
+        } },
+        "Daily deficit": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "每日赤字"}}
+        } },
+        "Food allowance": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "可吃熱量"}}
+        } },
+        "Workout burn target": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "運動消耗目標"}}
+        } },
+        "Your numbers": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "你的數字"}}
+        } },
+        "BMR uses Mifflin–St Jeor; maintenance assumes a desk day (×1.2).": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "基礎代謝用 Mifflin–St Jeor 公式；維持熱量以久坐上班族估算（×1.2）。"}}
+        } },
+        "Plan": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "計畫"}}
+        } },
+        "GOAL WEIGHT": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "目標體重"}}
+        } },
+        "%@ kg to lose from %@ kg": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "從 %2$@ kg 還要減 %1$@ kg"}}
+        } },
+        "By": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "期限"}}
+        } },
+        "DEFICIT FROM": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "赤字來源"}}
+        } },
+        "Split": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "分配"}}
+        } },
+        "Food": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "飲食"}}
+        } },
+        "eat / day": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "每天可吃"}}
+        } },
+        "workout burn / day": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "每天運動消耗"}}
+        } },
+        "deficit / day": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "每天赤字"}}
+        } },
+        "per week": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "每週減"}}
+        } },
+        "%@%@ vs now": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "比現在 %1$@%2$@"}}
+        } },
+        "Faster than 1% of body weight a week": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "每週減重超過體重的百分之一"}}
+        } },
+        "Food is at the 1,500 kcal floor; the rest moved to workouts": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "飲食已到 1,500 kcal 下限，其餘改由運動補"}}
+        } },
+        "7 NIGHTS": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "近 7 晚"}}
+        } },
+        "need %@": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "需要 %@"}}
+        } },
+        "of %@ needed": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "需求 %@"}}
+        } },
+        "No sleep recorded last night": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "昨晚沒有睡眠紀錄"}}
+        } },
+        "avg sleep": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "平均睡眠"}}
+        } },
+        "avg bedtime": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "平均就寢"}}
+        } },
+        "avg wake": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "平均起床"}}
+        } },
         "Ring battery %lld percent": { "localizations": {
           "de": {"stringUnit": {"state": "translated", "value": "Ring-Akku %lld Prozent"}}, "es": {"stringUnit": {"state": "translated", "value": "Batería del anillo %lld por ciento"}}, "fr": {"stringUnit": {"state": "translated", "value": "Batterie de la bague %lld pour cent"}}, "it": {"stringUnit": {"state": "translated", "value": "Batteria dell'anello %lld percento"}}, "pl": {"stringUnit": {"state": "translated", "value": "Bateria pierścienia %lld procent"}}, "pt-PT": {"stringUnit": {"state": "translated", "value": "Bateria do anel %lld por cento"}}, "ru": {"stringUnit": {"state": "translated", "value": "Заряд кольца %lld процентов"}}, "zh-Hans": {"stringUnit": {"state": "translated", "value": "戒指电量百分之 %lld"}}, "zh-Hant": {"stringUnit": {"state": "translated", "value": "戒指電量百分之 %lld"}}
         } },

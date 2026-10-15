@@ -110,7 +110,7 @@ struct CutSleepView: View {
         }
     }
 
-    private func avg(_ icon: String, _ value: String, _ label: String) -> some View {
+    private func avg(_ icon: String, _ value: String, _ label: LocalizedStringKey) -> some View {
         VStack(spacing: NoopMetrics.space1) {
             Image(systemName: icon).foregroundStyle(StrandPalette.restColor)
             Text(value).font(StrandFont.number(18, weight: .bold)).foregroundStyle(StrandPalette.textPrimary)
@@ -223,7 +223,7 @@ struct LastNightCard: View {
                 ForEach(shown, id: \.name) { p in
                     HStack(spacing: NoopMetrics.space1) {
                         Circle().fill(p.color).frame(width: 7, height: 7)
-                        Text(p.name).font(StrandFont.caption).foregroundStyle(StrandPalette.textTertiary)
+                        Text(LocalizedStringKey(p.name)).font(StrandFont.caption).foregroundStyle(StrandPalette.textTertiary)
                         Text(sleepHM(p.min)).font(StrandFont.caption).foregroundStyle(StrandPalette.textPrimary)
                     }
                     .lineLimit(1)

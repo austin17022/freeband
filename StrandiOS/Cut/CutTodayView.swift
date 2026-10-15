@@ -277,7 +277,7 @@ struct CutTodayView: View {
         }
     }
 
-    private func iconStat(_ icon: String, _ tint: Color, _ value: String, _ label: String) -> some View {
+    private func iconStat(_ icon: String, _ tint: Color, _ value: String, _ label: LocalizedStringKey) -> some View {
         HStack(spacing: NoopMetrics.space2) {
             Image(systemName: icon)
                 .font(.system(size: 13, weight: .semibold))
@@ -291,7 +291,7 @@ struct CutTodayView: View {
         }
     }
 
-    private func eqTile(_ icon: String, _ tint: Color, _ value: String, _ label: String) -> some View {
+    private func eqTile(_ icon: String, _ tint: Color, _ value: String, _ label: LocalizedStringKey) -> some View {
         VStack(spacing: 2) {
             Image(systemName: icon).font(.system(size: 12, weight: .semibold)).foregroundStyle(tint)
             Text(value).font(StrandFont.number(17, weight: .bold)).foregroundStyle(StrandPalette.textPrimary)
@@ -470,7 +470,7 @@ struct CutTodayView: View {
                         .offset(x: min(max(x - 8, 0), g.size.width - 16))
                 }
                 .frame(height: 16)
-                Text(String(format: "%.1f now", current))
+                Text("\(String(format: "%.1f", current)) now")
                     .font(StrandFont.caption.weight(.semibold)).foregroundStyle(StrandPalette.textPrimary)
                     .fixedSize()
                     .position(x: min(max(x, 28), g.size.width - 28), y: 28)
@@ -486,12 +486,13 @@ struct CutTodayView: View {
         let late = eta.map { cal.dateComponents([.day], from: cal.startOfDay(for: plan.targetDate),
                                                 to: cal.startOfDay(for: $0)).day ?? 0 }
         let when = eta.map { $0.formatted(.dateTime.day().month(.abbreviated)) } ?? ""
-        let (text, tint): (String, Color) = {
+        let (text, tint): (LocalizedStringKey, Color) = { () -> (LocalizedStringKey, Color) in
             if current <= plan.goalKg { return ("Done. Set a new goal any time.", good) }
             if p.fromPlan { return ("Log 2 full days to see if you're on track", StrandPalette.textTertiary) }
             guard let late else { return ("Not losing lately: eat less or move more", bad) }
             if late <= 0 { return ("On track: you'll get there \(when)", good) }
-            return ("\(late) day\(late == 1 ? "" : "s") behind: you'll get there \(when)", StrandPalette.statusWarning)
+            return (late == 1 ? "1 day behind: you'll get there \(when)" : "\(late) days behind: you'll get there \(when)",
+                    StrandPalette.statusWarning)
         }()
         return HStack(spacing: NoopMetrics.space2) {
             Circle().fill(tint).frame(width: 10, height: 10)
@@ -512,7 +513,8 @@ struct CutTodayView: View {
 
     // MARK: Pieces
 
-    private func tile(_ title: String, icon: String, value: String, unit: String, caption: String, tint: Color) -> some View {
+    private func tile(_ title: LocalizedStringKey, icon: String, value: String, unit: String, caption: LocalizedStringKey,
+                      tint: Color) -> some View {
         NoopCard(tint: tint) {
             VStack(alignment: .leading, spacing: NoopMetrics.space2) {
                 Label(title, systemImage: icon)
@@ -556,18 +558,15 @@ struct CutTodayView: View {
 
     // MARK: Data
 
-    /// First launch: write the owner's stated numbers into the profile once, so every estimate
-    /// (calories, HR zones) uses them. Editable afterwards under Edit plan.
+    /// First launch: start the plan from the profile's own weight (a 5 kg goal as a placeholder) and
+    /// open Plan settings, so height, age, sex and weight are the wearer's rather than a preset body.
     private func seedPlanIfNeeded() {
         guard !plan.configured else { return }
-        profile.weightKg = 83.3
-        profile.heightCm = 180
-        profile.sex = "male"
-        profile.dateOfBirth = ProfileStore.dateOfBirth(forAge: 24)
-        plan.startKg = 83.3
+        plan.startKg = profile.weightKg
         plan.startDay = dayKey
-        plan.goalKg = 75
+        plan.goalKg = max(40, profile.weightKg - 5)
         plan.configured = true
+        showPlan = true
     }
 
     private func load() async {
@@ -645,19 +644,18 @@ private struct AddFoodSheet: View {
                 if !recent.isEmpty {
                     Section("Recent") {
                         ForEach(recent) { f in
-                            Button {
-                                plan.addFood(name: f.name, kcal: f.kcal, protein: f.protein, day: day)
-                                dismiss()
-                            } label: {
-                                HStack {
-                                    Text(f.name).foregroundStyle(StrandPalette.textPrimary)
-                                    Spacer()
-                                    Text(f.protein.map { "\(f.kcal) kcal · \(Int($0.rounded())) g P" } ?? "\(f.kcal) kcal")
-                                        .foregroundStyle(StrandPalette.textSecondary)
-                                }
-                            }
+                            quickAdd(f.name, kcal: f.kcal, protein: f.protein)
                         }
                     }
+                }
+                Section {
+                    ForEach(TaiwanFood.all) { f in
+                        quickAdd(f.name, kcal: f.kcal, protein: f.protein)
+                    }
+                } header: {
+                    Text("Taiwan favorites")
+                } footer: {
+                    Text("Typical portions, so treat the numbers as estimates.")
                 }
             }
             .navigationTitle("Add food")
@@ -677,6 +675,49 @@ private struct AddFoodSheet: View {
         }
         .presentationDetents([.medium, .large])
     }
+
+    /// One tap logs the food and closes the sheet.
+    private func quickAdd(_ name: String, kcal: Int, protein: Double?) -> some View {
+        Button {
+            plan.addFood(name: name, kcal: kcal, protein: protein, day: day)
+            dismiss()
+        } label: {
+            HStack {
+                Text(name).foregroundStyle(StrandPalette.textPrimary)
+                Spacer()
+                Text(protein.map { "\(kcal) kcal · \(Int($0.rounded())) g P" } ?? "\(kcal) kcal")
+                    .foregroundStyle(StrandPalette.textSecondary)
+            }
+        }
+    }
+}
+
+/// Everyday Taiwanese foods for one-tap logging. Typical portions; kcal and protein are rounded
+/// estimates, so a logged value is a starting point rather than a measurement.
+private struct TaiwanFood: Identifiable {
+    let name: String
+    let kcal: Int
+    let protein: Double?
+    var id: String { name }
+
+    static let all: [TaiwanFood] = [
+        TaiwanFood(name: "珍珠奶茶（大杯全糖）", kcal: 650, protein: 3),
+        TaiwanFood(name: "珍珠奶茶（大杯微糖）", kcal: 450, protein: 3),
+        TaiwanFood(name: "無糖豆漿（400 ml）", kcal: 140, protein: 14),
+        TaiwanFood(name: "拿鐵（大杯）", kcal: 200, protein: 10),
+        TaiwanFood(name: "超商茶葉蛋", kcal: 75, protein: 7),
+        TaiwanFood(name: "超商御飯糰", kcal: 200, protein: 5),
+        TaiwanFood(name: "超商雞胸肉", kcal: 120, protein: 23),
+        TaiwanFood(name: "超商烤地瓜", kcal: 220, protein: 3),
+        TaiwanFood(name: "原味蛋餅", kcal: 250, protein: 9),
+        TaiwanFood(name: "滷肉飯（小碗）", kcal: 400, protein: 10),
+        TaiwanFood(name: "雞腿便當", kcal: 850, protein: 40),
+        TaiwanFood(name: "排骨便當", kcal: 900, protein: 35),
+        TaiwanFood(name: "牛肉麵", kcal: 650, protein: 35),
+        TaiwanFood(name: "水餃（10 顆）", kcal: 500, protein: 20),
+        TaiwanFood(name: "鍋貼（10 顆）", kcal: 550, protein: 18),
+        TaiwanFood(name: "雞排（一片）", kcal: 640, protein: 45),
+    ]
 }
 
 private struct LogWeightSheet: View {
@@ -801,7 +842,7 @@ private struct CutPlanSheet: View {
         Binding(get: { profile.age }, set: { profile.dateOfBirth = ProfileStore.dateOfBirth(forAge: $0) })
     }
 
-    private func row(_ label: String, _ value: String) -> some View {
+    private func row(_ label: LocalizedStringKey, _ value: String) -> some View {
         HStack {
             Text(label)
             Spacer()
@@ -843,7 +884,7 @@ struct GoalSheet: View {
                                 Spacer()
                                 Stepper("", value: $goalKg, in: 40...max(40, currentKg - 0.5), step: 0.5).labelsHidden()
                             }
-                            Text(String(format: "%.1f kg to lose from %.1f kg", max(currentKg - goalKg, 0), currentKg))
+                            Text("\(String(format: "%.1f", max(currentKg - goalKg, 0))) kg to lose from \(String(format: "%.1f", currentKg)) kg")
                                 .font(StrandFont.caption).foregroundStyle(StrandPalette.textTertiary)
                         }
                     }
@@ -911,7 +952,7 @@ struct GoalSheet: View {
     private func n(_ v: Double) -> String { Int(v.rounded()).formatted() }
 
     /// A preview tile; `delta` shows the change against the current plan so the effect is obvious.
-    private func stat(_ icon: String, _ tint: Color, _ value: String, _ label: String, delta: Double?) -> some View {
+    private func stat(_ icon: String, _ tint: Color, _ value: String, _ label: LocalizedStringKey, delta: Double?) -> some View {
         NoopCard(tint: tint) {
             VStack(alignment: .leading, spacing: NoopMetrics.space1) {
                 Image(systemName: icon).foregroundStyle(tint)
@@ -919,7 +960,7 @@ struct GoalSheet: View {
                     .lineLimit(1).minimumScaleFactor(0.7)
                 Text(label).font(StrandFont.caption).foregroundStyle(StrandPalette.textTertiary)
                 if let delta, abs(delta) >= 1 {
-                    Text((delta > 0 ? "+" : "−") + n(abs(delta)) + " vs now")
+                    Text("\(delta > 0 ? "+" : "−" as String)\(n(abs(delta))) vs now")
                         .font(StrandFont.caption.weight(.semibold))
                         .foregroundStyle(StrandPalette.textSecondary)
                 }
