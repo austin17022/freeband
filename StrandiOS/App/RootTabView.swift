@@ -69,9 +69,9 @@ struct RootTabView: View {
     /// Today if they prefer it (keyed identically to the SettingsView toggle). Default ON.
     @AppStorage("noop.liquidTodayEnabled") private var liquidTodayEnabled = true
 
-    /// The Today tab root: the personal weight-loss screen.
+    /// The Today tab root, honouring the liquid/classic preference. The weight-loss screen has its own tab.
     @ViewBuilder private var todayTabRoot: some View {
-        CutTodayView()
+        if liquidTodayEnabled { LiquidTodayView() } else { TodayView() }
     }
 
     /// Native tab selection binding. SwiftUI sends taps on the already-selected item through the
@@ -122,8 +122,9 @@ struct RootTabView: View {
             }
     }
 
-    /// Tags of the tabs this build shows.
-    private static let shownTabs = [0, 2]
+    /// Tags of the tabs this build shows: NOOP's Today, Trends, Sleep and More, with the weight-loss
+    /// screen in Coach's slot (Coach opens as a sheet instead).
+    private static let shownTabs = [0, 1, 2, 3, 4]
 
     var body: some View {
         // The platform tab bar is intentionally left fully native. iOS 26 supplies Liquid Glass and
@@ -131,13 +132,13 @@ struct RootTabView: View {
         // the corresponding system material and safe-area behaviour from the same TabView.
         TabView(selection: nativeTabSelection) {
             tab(todayTabRoot, "Today", "square.grid.2x2", path: $tabPaths[0], scrollSignal: scrollTop[0]).tag(0)
-            tab(CutSleepView(), "Sleep", "bed.double", path: $tabPaths[2], scrollSignal: scrollTop[2]).tag(2)
+            tab(TrendsView(), "Trends", "chart.line.uptrend.xyaxis", path: $tabPaths[1], scrollSignal: scrollTop[1]).tag(1)
+            tab(SleepView(), "Sleep", "bed.double", path: $tabPaths[2], scrollSignal: scrollTop[2]).tag(2)
+            tab(CutTodayView(), "Weight loss", "scalemass", path: $tabPaths[3], scrollSignal: scrollTop[3]).tag(3)
+            moreTab(path: $tabPaths[4], scrollSignal: scrollTop[4]).tag(4)
         }
         .tint(StrandPalette.accent)
-        // Switching Coach off while STANDING on it leaves `selectedTab` pointing at a tag no tab claims
-        // any more, which renders as an empty tab rather than as an error. Send that wearer to Today, and
-        // only in that case, so a flip made from anywhere else does not move them.
-        // Only Today (0) and Sleep (2) remain; a route to a removed tab (Trends, Coach) lands on Today.
+        // A route to a tag no tab claims lands on Today rather than on a blank tab.
         .onChangeCompat(of: selectedTab) { tag in
             if !Self.shownTabs.contains(tag) { selectedTab = 0 }
         }
@@ -205,19 +206,14 @@ struct RootTabView: View {
                 routedPillar = dest
                 router.requestedDestination = nil
             case .coach:
-                // K3: Coach is now a top-level tab (tag 3) — switch to it directly instead of
-                // presenting it as a pillar sheet.
-                //
-                // Guarded on the master switch, because this route is reachable with Coach OFF. A brief
-                // notification already sitting in Notification Centre still calls `openCoach()` when it is
-                // tapped (StrandApp wires `onCoachBriefTapped` to it), and with no tab claiming tag 3 the
-                // wearer would land on a BLANK tab. Dropping the request leaves them where they were, which
-                // is the honest answer for a feature that is switched off.
+                // Tag 3 is the weight-loss tab in this fork, so Coach opens as a pillar sheet (as it did
+                // before K3). Guarded on the master switch: a brief notification left in Notification
+                // Centre can still route here with Coach OFF, and dropping it is the honest answer.
                 guard coachEnabled else {
                     router.requestedDestination = nil
                     break
                 }
-                withAnimation(.timingCurve(0.22, 1, 0.36, 1, duration: 0.24)) { selectedTab = 3 }
+                routedPillar = dest
                 router.requestedDestination = nil
             case .trends:
                 // Trends is a primary tab on iPhone (not a pillar sheet) — switch to it.

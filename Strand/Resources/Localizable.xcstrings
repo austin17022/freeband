@@ -1,6 +1,9 @@
 {
   "sourceLanguage": "en",
   "strings": {
+        "Weight loss": { "localizations": {
+          "zh-Hant": {"stringUnit": {"state": "translated", "value": "減肥"}}
+        } },
         "Plan settings": { "localizations": {
           "zh-Hant": {"stringUnit": {"state": "translated", "value": "計畫設定"}}
         } },
@@ -2434,7 +2437,7 @@
       "de": { "stringUnit": { "state": "translated", "value": "Abgeschlossene Sitzungen landen hier – mit jedem Satz, den du aufgezeichnet hast." } }, "en": { "stringUnit": { "state": "translated", "value": "Finished sessions land here, with every set you logged." } }, "es": { "stringUnit": { "state": "translated", "value": "Las sesiones terminadas aparecen aquí, con cada serie que registraste." } }, "fr": { "stringUnit": { "state": "translated", "value": "Les séances terminées arrivent ici, avec chaque série que tu as enregistrée." } }, "it": { "stringUnit": { "state": "translated", "value": "Le sessioni concluse finiscono qui, con ogni serie che hai registrato." } }, "pl": { "stringUnit": { "state": "translated", "value": "Zakończone sesje trafiają tutaj, z każdą zapisaną serią." } }, "pt-PT": { "stringUnit": { "state": "translated", "value": "As sessões terminadas aparecem aqui, com todas as séries que registaste." } }, "ru": { "stringUnit": { "state": "translated", "value": "Завершённые сессии попадают сюда — со всеми записанными подходами." } }, "zh-Hans": { "stringUnit": { "state": "translated", "value": "完成的训练会出现在这里，包含你记录的每一组。" } }, "zh-Hant": { "stringUnit": { "state": "translated", "value": "完成的訓練會出現在這裡，包含你記錄的每一組。" } }
     } },
     "Lifting figures are worked out from the sets above. Effort stays measured from heart rate and is never derived from weights and reps.": { "localizations": {
-      "de": { "stringUnit": { "state": "translated", "value": "Die Kraftzahlen werden aus den Sätzen oben berechnet. Die Belastung bleibt aus der Herzfrequenz gemessen und wird nie aus Gewichten und Wiederholungen abgeleitet." } }, "en": { "stringUnit": { "state": "translated", "value": "Lifting figures are worked out from the sets above. Effort stays measured from heart rate and is never derived from weights and reps." } }, "es": { "stringUnit": { "state": "translated", "value": "Las cifras de fuerza salen de las series de arriba. El Esfuerzo se sigue midiendo por frecuencia cardíaca y nunca se deriva de pesos y repeticiones." } }, "fr": { "stringUnit": { "state": "translated", "value": "Les chiffres de musculation sont calculés à partir des séries ci-dessus. L'Effort reste mesuré par la fréquence cardiaque et n'est jamais déduit des charges et répétitions." } }, "it": { "stringUnit": { "state": "translated", "value": "I numeri della forza sono calcolati dalle serie qui sopra. Lo Sforzo resta misurato dalla frequenza cardiaca e non viene mai derivato da pesi e ripetizioni." } }, "pl": { "stringUnit": { "state": "translated", "value": "Liczby siłowe wynikają z serii powyżej. Wysiłek nadal mierzony jest tętnem i nigdy nie jest wyprowadzany z ciężarów i powtórzeń." } }, "pt-PT": { "stringUnit": { "state": "translated", "value": "Os números de força são calculados a partir das séries acima. O Esforço continua medido pela frequência cardíaca e nunca é derivado de pesos e repetições." } }, "ru": { "stringUnit": { "state": "translated", "value": "Силовые показатели считаются из подходов выше. Усилие по-прежнему измеряется по пульсу и никогда не выводится из весов и повторений." } }, "zh-Hans": { "stringUnit": { "state": "translated", "value": "力量数据由上面的组次算出。消耗始终由心率测得，绝不会从重量和次数推导。" } }, "zh-Hant": { "stringUnit": { "state": "translated", "value": "力量數據由上面的組次算出。消耗始終由心率測得，絕不會從重量和次數推導。" } }
+      "de": { "stringUnit": { "state": "translated", "value": "Die Kraftzahlen werden aus den Sätzen oben berechnet. Die Belastung bleibt aus der Herzfrequenz gemessen und wird nie aus Gewichten und Wiederholungen abgeleitet." } }, "en": { "stringUnit": { "state": "translated", "value": "Lifting figures are worked out from the sets above. Effort stays measured from heart rate and is never derived from weights and reps." } }, "es": { "stringUnit": { "state": "translated", "value": "Las cifras de fuerza salen de las series de arriba. El Esfuerzo se sigue midiendo por frecuencia cardíaca y nunca se deriva de pesos y repeticiones." } }, "fr": { "stringUnit": { "state": "translated", "value": "Les chiffres de musculation sont calculés à partir des séries ci-dessus. L'Effort reste mesuré par la fréquence cardiaque et n'est jamais déduit des charges et répétitions." } }, "it": { "stringUnit": { "state": "translated", "value": "I numeri della forza sono calcolati dalle serie qui sopra. Lo Sforzo resta misurato dalla frequenza cardiaca e non viene mai derivato da pesi e ripetizioni." } }, "pl": { "stringUnit": { "state": "translated", "value": "Liczby siłowe wynikają z serii powyżej. Wysiłek nadal mierzony jest tętnem i nigdy nie jest wyprowadzany z ciężarów i powtórzeń." } }, "pt-PT": { "stringUnit": { "state": "translated", "value": "Os números de força são calculados a partir das séries acima. O Esforço continua medido pela frequência cardíaca e nunca é derivado de pesos e repetições." } }, "ru": { "stringUnit": { "state": "translated", "value": "Силовые показатели считаются из подходов выше. Усилие по-прежнему измеряется по пульсу и никогда не выводится из весов и повторений." } }, "zh-Hans": { "stringUnit": { "state": "translated", "value": "力量数据由上面的组次算出。消耗始终由心率测得，绝不会从重量和次数推导。" } }, "zh-Hant": { "stringUnit": { "state": "translated", "value": "力量數據由上面的組次算出。負荷始終由心率測得，絕不會從重量和次數推導。" } }
     } },
     "None of these exercises has a muscle group yet. Add one on the exercise and every future session counts toward it.": { "localizations": {
       "de": { "stringUnit": { "state": "translated", "value": "Noch keine dieser Übungen hat eine Muskelgruppe. Trag eine bei der Übung ein, und jede künftige Sitzung zählt darauf ein." } }, "en": { "stringUnit": { "state": "translated", "value": "None of these exercises has a muscle group yet. Add one on the exercise and every future session counts toward it." } }, "es": { "stringUnit": { "state": "translated", "value": "Ninguno de estos ejercicios tiene aún grupo muscular. Añade uno al ejercicio y todas las sesiones futuras contarán para él." } }, "fr": { "stringUnit": { "state": "translated", "value": "Aucun de ces exercices n'a encore de groupe musculaire. Ajoutes-en un à l'exercice et chaque séance future comptera dedans." } }, "it": { "stringUnit": { "state": "translated", "value": "Nessuno di questi esercizi ha ancora un gruppo muscolare. Aggiungine uno all'esercizio e ogni sessione futura conterà su di esso." } }, "pl": { "stringUnit": { "state": "translated", "value": "Żadne z tych ćwiczeń nie ma jeszcze grupy mięśniowej. Dodaj ją do ćwiczenia, a każda kolejna sesja będzie się na nią liczyć." } }, "pt-PT": { "stringUnit": { "state": "translated", "value": "Nenhum destes exercícios tem ainda grupo muscular. Adiciona um ao exercício e todas as sessões futuras contam para ele." } }, "ru": { "stringUnit": { "state": "translated", "value": "Ни одно из этих упражнений пока не имеет мышечной группы. Добавь её к упражнению — и каждая следующая сессия пойдёт в зачёт." } }, "zh-Hans": { "stringUnit": { "state": "translated", "value": "这些动作还没有肌群。给动作添加一个，之后每次训练都会计入其中。" } }, "zh-Hant": { "stringUnit": { "state": "translated", "value": "這些動作還沒有肌群。給動作新增一個，之後每次訓練都會計入其中。" } }
@@ -2626,7 +2629,7 @@
       "de": { "stringUnit": { "state": "translated", "value": "Programme, Sitzungen und Satz-für-Satz-Verlauf" } }, "en": { "stringUnit": { "state": "translated", "value": "Programs, sessions and per-set history" } }, "es": { "stringUnit": { "state": "translated", "value": "Programas, sesiones e historial por serie" } }, "fr": { "stringUnit": { "state": "translated", "value": "Programmes, séances et historique par série" } }, "it": { "stringUnit": { "state": "translated", "value": "Programmi, sessioni e storico per serie" } }, "pl": { "stringUnit": { "state": "translated", "value": "Programy, sesje i historia serii" } }, "pt-PT": { "stringUnit": { "state": "translated", "value": "Programas, sessões e histórico por série" } }, "ru": { "stringUnit": { "state": "translated", "value": "Программы, сессии и история по подходам" } }, "zh-Hans": { "stringUnit": { "state": "translated", "value": "计划、训练与每组历史" } }, "zh-Hant": { "stringUnit": { "state": "translated", "value": "計畫、訓練與每組歷史" } }
     } },
     "Lifting adds volume and set counts. It never changes your Effort, which stays measured from heart rate.": { "localizations": {
-      "de": { "stringUnit": { "state": "translated", "value": "Krafttraining ergänzt Volumen und Satzzahlen. Deine Belastung ändert es nie – die wird weiterhin aus der Herzfrequenz gemessen." } }, "en": { "stringUnit": { "state": "translated", "value": "Lifting adds volume and set counts. It never changes your Effort, which stays measured from heart rate." } }, "es": { "stringUnit": { "state": "translated", "value": "Las pesas añaden volumen y recuento de series. Nunca cambian tu Esfuerzo, que se sigue midiendo por la frecuencia cardíaca." } }, "fr": { "stringUnit": { "state": "translated", "value": "La musculation ajoute du volume et un décompte de séries. Elle ne change jamais ton Effort, toujours mesuré à partir de la fréquence cardiaque." } }, "it": { "stringUnit": { "state": "translated", "value": "I pesi aggiungono volume e conteggio delle serie. Non cambiano mai il tuo Sforzo, che resta misurato dalla frequenza cardiaca." } }, "pl": { "stringUnit": { "state": "translated", "value": "Trening siłowy dodaje objętość i liczbę serii. Nigdy nie zmienia Twojego Wysiłku, który nadal jest mierzony tętnem." } }, "pt-PT": { "stringUnit": { "state": "translated", "value": "Os pesos acrescentam volume e contagem de séries. Nunca alteram o teu Esforço, que continua medido pela frequência cardíaca." } }, "ru": { "stringUnit": { "state": "translated", "value": "Силовые добавляют объём и число подходов. Они никогда не меняют твоё Усилие — оно по-прежнему измеряется по пульсу." } }, "zh-Hans": { "stringUnit": { "state": "translated", "value": "力量训练会增加容量和组数统计，但绝不会改变你的消耗——消耗始终由心率测得。" } }, "zh-Hant": { "stringUnit": { "state": "translated", "value": "力量訓練會增加容量和組數統計，但絕不會改變你的消耗——消耗始終由心率測得。" } }
+      "de": { "stringUnit": { "state": "translated", "value": "Krafttraining ergänzt Volumen und Satzzahlen. Deine Belastung ändert es nie – die wird weiterhin aus der Herzfrequenz gemessen." } }, "en": { "stringUnit": { "state": "translated", "value": "Lifting adds volume and set counts. It never changes your Effort, which stays measured from heart rate." } }, "es": { "stringUnit": { "state": "translated", "value": "Las pesas añaden volumen y recuento de series. Nunca cambian tu Esfuerzo, que se sigue midiendo por la frecuencia cardíaca." } }, "fr": { "stringUnit": { "state": "translated", "value": "La musculation ajoute du volume et un décompte de séries. Elle ne change jamais ton Effort, toujours mesuré à partir de la fréquence cardiaque." } }, "it": { "stringUnit": { "state": "translated", "value": "I pesi aggiungono volume e conteggio delle serie. Non cambiano mai il tuo Sforzo, che resta misurato dalla frequenza cardiaca." } }, "pl": { "stringUnit": { "state": "translated", "value": "Trening siłowy dodaje objętość i liczbę serii. Nigdy nie zmienia Twojego Wysiłku, który nadal jest mierzony tętnem." } }, "pt-PT": { "stringUnit": { "state": "translated", "value": "Os pesos acrescentam volume e contagem de séries. Nunca alteram o teu Esforço, que continua medido pela frequência cardíaca." } }, "ru": { "stringUnit": { "state": "translated", "value": "Силовые добавляют объём и число подходов. Они никогда не меняют твоё Усилие — оно по-прежнему измеряется по пульсу." } }, "zh-Hans": { "stringUnit": { "state": "translated", "value": "力量训练会增加容量和组数统计，但绝不会改变你的消耗——消耗始终由心率测得。" } }, "zh-Hant": { "stringUnit": { "state": "translated", "value": "力量訓練會增加容量和組數統計，但絕不會改變你的負荷——負荷始終由心率測得。" } }
     } },
     "Programs": { "localizations": {
       "de": { "stringUnit": { "state": "translated", "value": "Programme" } }, "en": { "stringUnit": { "state": "translated", "value": "Programs" } }, "es": { "stringUnit": { "state": "translated", "value": "Programas" } }, "fr": { "stringUnit": { "state": "translated", "value": "Programmes" } }, "it": { "stringUnit": { "state": "translated", "value": "Programmi" } }, "pl": { "stringUnit": { "state": "translated", "value": "Programy" } }, "pt-PT": { "stringUnit": { "state": "translated", "value": "Programas" } }, "ru": { "stringUnit": { "state": "translated", "value": "Программы" } }, "zh-Hans": { "stringUnit": { "state": "translated", "value": "计划" } }, "zh-Hant": { "stringUnit": { "state": "translated", "value": "計畫" } }
@@ -3507,7 +3510,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": " 消耗"
+            "value": " 負荷"
           }
         },
         "pl": {
@@ -4413,7 +4416,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ 消耗"
+            "value": "%@ 負荷"
           }
         },
         "pl": {
@@ -9524,7 +9527,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "%1$@：%2$@ 能量"
+            "value": "%1$@：%2$@ 恢復"
           }
         },
         "pl": {
@@ -15824,7 +15827,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld%% 能量"
+            "value": "%lld%% 恢復"
           }
         },
         "pl": {
@@ -24094,7 +24097,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "當你的消耗達到今日最佳強度區間的下限時，每天提醒一次；該區間根據你的恢復情況得出。"
+            "value": "當你的負荷達到今日最佳強度區間的下限時，每天提醒一次；該區間根據你的恢復情況得出。"
           }
         }
       }
@@ -24449,7 +24452,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "對你每夜 HRV 的唯讀 Plews/Altini 最小有意義變化解讀：顯示你的 7 夜 HRV 基線處於個人正常區間之上、之內還是之下。它不改變其他任何內容，無論開啟與否，能量環都完全相同。這屬於粗略的早期測試，尚未針對多樣的真實資料驗證（n=1）。"
+            "value": "對你每夜 HRV 的唯讀 Plews/Altini 最小有意義變化解讀：顯示你的 7 夜 HRV 基線處於個人正常區間之上、之內還是之下。它不改變其他任何內容，無論開啟與否，恢復環都完全相同。這屬於粗略的早期測試，尚未針對多樣的真實資料驗證（n=1）。"
           }
         }
       }
@@ -25314,7 +25317,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "手錶是對你的心率變異性抽樣，而非整夜串流，所以你的能量分數大約需要七個晚上來校準。在那之前 NOOP 會顯示「需要更多資料」，絕不顯示猜測的數字。"
+            "value": "手錶是對你的心率變異性抽樣，而非整夜串流，所以你的恢復分數大約需要七個晚上來校準。在那之前 NOOP 會顯示「需要更多資料」，絕不顯示猜測的數字。"
           }
         },
         "pl": {
@@ -34856,7 +34859,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "平均心率會以你輸入的數值顯示。心率圖、區間與消耗仍沿用記錄的訓練資料。"
+            "value": "平均心率會以你輸入的數值顯示。心率圖、區間與負荷仍沿用記錄的訓練資料。"
           }
         },
         "pl": {
@@ -46106,7 +46109,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量"
+            "value": "恢復"
           }
         },
         "pl": {
@@ -46164,7 +46167,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量 %@%%"
+            "value": "恢復 %@%%"
           }
         },
         "pl": {
@@ -46280,7 +46283,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量（全部歷史）"
+            "value": "恢復（全部歷史）"
           }
         },
         "pl": {
@@ -46338,7 +46341,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量（過去一年）"
+            "value": "恢復（過去一年）"
           }
         },
         "pl": {
@@ -46402,7 +46405,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量基線校準中。%1$@，%2$@。%3$@。"
+            "value": "恢復基線校準中。%1$@，%2$@。%3$@。"
           }
         },
         "pl": {
@@ -46460,7 +46463,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量基線重新校準中"
+            "value": "恢復基線重新校準中"
           }
         },
         "pl": {
@@ -46518,7 +46521,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量偏低，睡眠規律。"
+            "value": "恢復偏低，睡眠規律。"
           }
         },
         "pl": {
@@ -46576,7 +46579,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量偏低，且睡眠不足。"
+            "value": "恢復偏低，且睡眠不足。"
           }
         },
         "pl": {
@@ -46634,7 +46637,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量偏低。"
+            "value": "恢復偏低。"
           }
         },
         "pl": {
@@ -46692,7 +46695,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量平穩，睡眠規律。"
+            "value": "恢復平穩，睡眠規律。"
           }
         },
         "pl": {
@@ -46750,7 +46753,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量平穩，但睡眠不足。"
+            "value": "恢復平穩，但睡眠不足。"
           }
         },
         "pl": {
@@ -46808,7 +46811,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量平穩。"
+            "value": "恢復平穩。"
           }
         },
         "pl": {
@@ -46866,7 +46869,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量充沛，睡眠規律。"
+            "value": "恢復充沛，睡眠規律。"
           }
         },
         "pl": {
@@ -46924,7 +46927,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量充沛，但睡眠不足。"
+            "value": "恢復充沛，但睡眠不足。"
           }
         },
         "pl": {
@@ -46982,7 +46985,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量充沛。"
+            "value": "恢復充沛。"
           }
         },
         "pl": {
@@ -47040,7 +47043,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量模型"
+            "value": "恢復模型"
           }
         },
         "pl": {
@@ -47098,7 +47101,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量刻度，從已耗盡到已達峰值"
+            "value": "恢復刻度，從已耗盡到已達峰值"
           }
         },
         "pl": {
@@ -47156,7 +47159,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量趨勢"
+            "value": "恢復趨勢"
           }
         },
         "pl": {
@@ -47214,7 +47217,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量將你的 HRV 與個人基線（約 55%%）、靜息心率（約 20%%）、休息品質（約 15%%）、呼吸（約 5%%）和皮膚溫度偏差（約 5%%）加權計算。消耗是根據心率區間時長得出的 0-%lld 心血管負荷。休息由體動和心率分期得出。一切都在本機依據手環的原始資料計算。只要 NOOP 採集到原始資料流，任何一天都適用。"
+            "value": "恢復將你的 HRV 與個人基線（約 55%%）、靜息心率（約 20%%）、休息品質（約 15%%）、呼吸（約 5%%）和皮膚溫度偏差（約 5%%）加權計算。負荷是根據心率區間時長得出的 0-%lld 心血管負荷。休息由體動和心率分期得出。一切都在本機依據手環的原始資料計算。只要 NOOP 採集到原始資料流，任何一天都適用。"
           }
         }
       }
@@ -47266,7 +47269,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量會將你的 HRV 與你的個人基線（約 55%%）、靜息心率（約 20%%）、休息品質（約 15%%）、呼吸（約 5%%）和皮膚溫度偏差（約 5%%）進行加權。消耗是根據在各心率區間的時間得出的 0–%@ 心血管負荷。休息則根據體動和心率分期。一切都在這裡根據手環的原始資料計算，只要 NOOP 採集到原始資料流的任何一天都適用。"
+            "value": "恢復會將你的 HRV 與你的個人基線（約 55%%）、靜息心率（約 20%%）、休息品質（約 15%%）、呼吸（約 5%%）和皮膚溫度偏差（約 5%%）進行加權。負荷是根據在各心率區間的時間得出的 0–%@ 心血管負荷。休息則根據體動和心率分期。一切都在這裡根據手環的原始資料計算，只要 NOOP 採集到原始資料流的任何一天都適用。"
           }
         },
         "pl": {
@@ -47382,7 +47385,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量 · %@ 分"
+            "value": "恢復 · %@ 分"
           }
         },
         "pl": {
@@ -47440,7 +47443,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量 · 消耗 · 休息"
+            "value": "恢復 · 負荷 · 休息"
           }
         },
         "pl": {
@@ -47498,7 +47501,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量 → 隔天能量"
+            "value": "恢復 → 隔天恢復"
           }
         },
         "pl": {
@@ -47556,7 +47559,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量、消耗和休息，以及它們與 WHOOP 的區別。"
+            "value": "恢復、負荷和休息，以及它們與 WHOOP 的區別。"
           }
         },
         "pl": {
@@ -47614,7 +47617,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量、消耗和休息都是在你自己的裝置上根據手環資料計算的。能量大約需要四晚睡眠來學習你的基線（也就是「校準中」，在圓環上以幾分之四的晚數顯示），並在頭一兩週持續變得更精準。在 WHOOP 5 或 MG 上，手環儲存的歷史資料很少，所以在你連續佩戴幾晚之前，該計數可能停在 0 / 4。這是手環的同步限制，不是故障。在有數字之前，NOOP 會盡量顯示可顯示的內容，而不會偽造一個數字。"
+            "value": "恢復、負荷和休息都是在你自己的裝置上根據手環資料計算的。恢復大約需要四晚睡眠來學習你的基線（也就是「校準中」，在圓環上以幾分之四的晚數顯示），並在頭一兩週持續變得更精準。在 WHOOP 5 或 MG 上，手環儲存的歷史資料很少，所以在你連續佩戴幾晚之前，該計數可能停在 0 / 4。這是手環的同步限制，不是故障。在有數字之前，NOOP 會盡量顯示可顯示的內容，而不會偽造一個數字。"
           }
         },
         "pl": {
@@ -47672,7 +47675,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "佩戴幾晚後，能量、消耗和休息就會變得個人化。"
+            "value": "佩戴幾晚後，恢復、負荷和休息就會變得個人化。"
           }
         },
         "pl": {
@@ -47730,7 +47733,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量、消耗和休息會在你接下來幾晚的佩戴中逐步建立。"
+            "value": "恢復、負荷和休息會在你接下來幾晚的佩戴中逐步建立。"
           }
         },
         "pl": {
@@ -47788,7 +47791,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "一眼掌握能量、消耗、休息、HRV、靜息與即時心率，以及手環電量。"
+            "value": "一眼掌握恢復、負荷、休息、HRV、靜息與即時心率，以及手環電量。"
           }
         },
         "pl": {
@@ -47846,7 +47849,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量：你恢復得如何？"
+            "value": "恢復：你恢復得如何？"
           }
         },
         "pl": {
@@ -48960,7 +48963,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "選擇距離、體重、身高、溫度和消耗的顯示方式。你的資料始終以相同方式儲存，這只改變顯示。"
+            "value": "選擇距離、體重、身高、溫度和負荷的顯示方式。你的資料始終以相同方式儲存，這只改變顯示。"
           }
         },
         "pl": {
@@ -64258,7 +64261,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "消耗"
+            "value": "負荷"
           }
         },
         "pl": {
@@ -64316,7 +64319,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "消耗建立中"
+            "value": "負荷建立中"
           }
         },
         "pl": {
@@ -66010,7 +66013,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "消耗"
+            "value": "負荷"
           }
         },
         "pl": {
@@ -66068,7 +66071,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "消耗（0–100）"
+            "value": "負荷（0–100）"
           }
         },
         "pl": {
@@ -66126,7 +66129,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "消耗量表"
+            "value": "負荷量表"
           }
         },
         "pl": {
@@ -66184,7 +66187,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "本 %@ 的消耗"
+            "value": "本 %@ 的負荷"
           }
         },
         "pl": {
@@ -66242,7 +66245,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "消耗：你的心臟有多努力？"
+            "value": "負荷：你的心臟有多努力？"
           }
         },
         "pl": {
@@ -67671,7 +67674,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "根據今天的消耗、你通常的睡眠以及你 %lld 晚的恢復基線得出的估算，而非測量值。你真正的能量是在你醒來後根據明天的 HRV 評分得出的。"
+            "value": "根據今天的消耗、你通常的睡眠以及你 %lld 晚的恢復基線得出的估算，而非測量值。你真正的恢復是在你醒來後根據明天的 HRV 評分得出的。"
           }
         },
         "pl": {
@@ -76615,7 +76618,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "心率 %1$@ · 消耗 %2$@"
+            "value": "心率 %1$@ · 負荷 %2$@"
           }
         },
         "pl": {
@@ -78273,7 +78276,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "HRV ↔ 能量"
+            "value": "HRV ↔ 恢復"
           }
         },
         "pl": {
@@ -82010,7 +82013,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量如何計算"
+            "value": "恢復如何計算"
           }
         },
         "pl": {
@@ -82068,7 +82071,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量如何計算。評分背後的方法。"
+            "value": "恢復如何計算。評分背後的方法。"
           }
         },
         "pl": {
@@ -82126,7 +82129,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "能量、消耗和休息是如何計算的，以及它們與 WHOOP 的區別。"
+            "value": "恢復、負荷和休息是如何計算的，以及它們與 WHOOP 的區別。"
           }
         },
         "pl": {
@@ -82190,7 +82193,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "消耗如何計算"
+            "value": "負荷如何計算"
           }
         },
         "pl": {
@@ -86456,7 +86459,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "從 Hevy 的 CSV 匯出檔案或 Liftosaur 的 JSON 匯出檔案匯入你的力量訓練歷史。每次鍛鍊都會成為一個力量訓練課次，並帶有訓練量估算（重量 × 次數）。這是一個訓練量數字，不是實測的強度，它絕不會改變你的消耗。"
+            "value": "從 Hevy 的 CSV 匯出檔案或 Liftosaur 的 JSON 匯出檔案匯入你的力量訓練歷史。每次鍛鍊都會成為一個力量訓練課次，並帶有訓練量估算（重量 × 次數）。這是一個訓練量數字，不是實測的強度，它絕不會改變你的負荷。"
           }
         },
         "pl": {
@@ -90943,7 +90946,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "最近一次能量分解"
+            "value": "最近一次恢復分解"
           }
         },
         "pl": {
@@ -93137,7 +93140,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "主要依據你的心率變異性（HRV）相對於你個人基線的表現，再加上靜息心率、昨晚的休息、呼吸率，以及皮膚溫度訊號（疾病或過度訓練的早期標誌）。HRV 相對基線越高，能量就越多。NOOP 需要先花幾晚學習你的基線，在那之前你會看到「校準中」。"
+            "value": "主要依據你的心率變異性（HRV）相對於你個人基線的表現，再加上靜息心率、昨晚的休息、呼吸率，以及皮膚溫度訊號（疾病或過度訓練的早期標誌）。HRV 相對基線越高，恢復就越多。NOOP 需要先花幾晚學習你的基線，在那之前你會看到「校準中」。"
           }
         },
         "pl": {
@@ -95226,7 +95229,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "透過 Bluetooth FTMS 傳輸即時器械資料。沒有睡眠、恢復、皮膚溫度或 SpO₂。消耗需要器械的心率；沒有的話，該課次只記錄器械指標。"
+            "value": "透過 Bluetooth FTMS 傳輸即時器械資料。沒有睡眠、恢復、皮膚溫度或 SpO₂。負荷需要器械的心率；沒有的話，該課次只記錄器械指標。"
           }
         },
         "pl": {
@@ -98321,7 +98324,7 @@
       "pt-PT": { "stringUnit": { "state": "translated", "value": "Predefinição. Os passos e o Esforço em curso recomeçam no início do sono principal detetado. As sestas não iniciam um novo dia; se faltarem dados de sono, é usada a meia-noite local." } },
       "ru": { "stringUnit": { "state": "translated", "value": "По умолчанию. Шаги и текущая Нагрузка обнуляются в начале распознанного основного сна. Дневной сон не начинает новый день; при отсутствии данных о сне используется местная полночь." } },
       "zh-Hans": { "stringUnit": { "state": "translated", "value": "默认。步数和进行中的体力消耗从检测到的主要睡眠开始时重新计算。小睡不会开始新的一天；缺少睡眠数据时，将使用当地午夜。" } },
-      "zh-Hant": { "stringUnit": { "state": "translated", "value": "預設。步數和進行中的體力消耗從偵測到的主要睡眠開始時重新計算。小睡不會開始新的一天；缺少睡眠資料時，將使用當地午夜。" } }
+      "zh-Hant": { "stringUnit": { "state": "translated", "value": "預設。步數和進行中的體力負荷從偵測到的主要睡眠開始時重新計算。小睡不會開始新的一天；缺少睡眠資料時，將使用當地午夜。" } }
     } },
     "Uses a conventional local calendar day from 00:00 to 00:00.": { "localizations": {
       "de": { "stringUnit": { "state": "translated", "value": "Verwendet einen herkömmlichen lokalen Kalendertag von 00:00 bis 00:00 Uhr." } },
@@ -104072,7 +104075,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "NOOP 能量"
+            "value": "NOOP 恢復"
           }
         },
         "pl": {
@@ -104188,7 +104191,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "NOOP 可以僅靠一塊 Apple Watch 運行，無需胸帶。手錶是感測器；NOOP 在你的手機上做運算，從你的健康資料中計算出能量、休息、消耗和你的體能年齡，全部在裝置本地。"
+            "value": "NOOP 可以僅靠一塊 Apple Watch 運行，無需胸帶。手錶是感測器；NOOP 在你的手機上做運算，從你的健康資料中計算出恢復、休息、負荷和你的體能年齡，全部在裝置本地。"
           }
         },
         "pl": {
@@ -104420,7 +104423,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "NOOP 為你提供三項每日評分（能量、消耗和休息），每項均為 0-100 分。它們基於你手環的原始訊號，採用公開發表的同儕審查運動科學方法，完全在你的裝置上計算。它們不是 WHOOP 的評分：我們沒有 WHOOP 的私有演算法，也不會假裝有。它們用開放科學回答同樣的三個問題，因此通常在趨勢方向上與 WHOOP 一致，但不會逐個數字吻合。這正是重點所在。"
+            "value": "NOOP 為你提供三項每日評分（恢復、負荷和休息），每項均為 0-100 分。它們基於你手環的原始訊號，採用公開發表的同儕審查運動科學方法，完全在你的裝置上計算。它們不是 WHOOP 的評分：我們沒有 WHOOP 的私有演算法，也不會假裝有。它們用開放科學回答同樣的三個問題，因此通常在趨勢方向上與 WHOOP 一致，但不會逐個數字吻合。這正是重點所在。"
           }
         }
       }
@@ -104472,7 +104475,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "NOOP 為你提供三個每日評分，能量、消耗和休息，每個都採用 0–100 的量表。它們根據你手環的原始訊號，運用已發表的、經同行評審的運動科學構建，並完全在你的裝置上計算。它們不是 WHOOP 的評分：我們沒有 WHOOP 的私有演算法，也不假裝擁有。它們運用開放科學瞄準同樣的三個問題，因此通常在方向上會與 WHOOP 的一致，但不會數字對數字地吻合，而這正是重點所在。"
+            "value": "NOOP 為你提供三個每日評分，恢復、負荷和休息，每個都採用 0–100 的量表。它們根據你手環的原始訊號，運用已發表的、經同行評審的運動科學構建，並完全在你的裝置上計算。它們不是 WHOOP 的評分：我們沒有 WHOOP 的私有演算法，也不假裝擁有。它們運用開放科學瞄準同樣的三個問題，因此通常在方向上會與 WHOOP 的一致，但不會數字對數字地吻合，而這正是重點所在。"
           }
         },
         "pl": {
@@ -106335,7 +106338,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "NOOP 自己的能量、消耗與休息，依據公開發表的方法在你的裝置上計算。"
+            "value": "NOOP 自己的恢復、負荷與休息，依據公開發表的方法在你的裝置上計算。"
           }
         },
         "pl": {
@@ -108397,7 +108400,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "尚無能量明細"
+            "value": "尚無恢復明細"
           }
         },
         "pl": {
@@ -109099,7 +109102,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "尚無心肺負荷。當你的心率進入消耗區間（約為心率儲備的 50%）後，消耗才會累積。平靜的一天老實說接近零。"
+            "value": "尚無心肺負荷。當你的心率進入負荷區間（約為心率儲備的 50%）後，負荷才會累積。平靜的一天老實說接近零。"
           }
         },
         "pl": {
@@ -109157,7 +109160,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "沒有胸帶？沒問題。NOOP 可以僅靠你的 Apple Watch 運行。它透過 Apple 健康讀取你手錶的資料，並就在你的手機上計算出你的能量、休息、消耗和體能年齡。一切都留在裝置上。"
+            "value": "沒有胸帶？沒問題。NOOP 可以僅靠你的 Apple Watch 運行。它透過 Apple 健康讀取你手錶的資料，並就在你的手機上計算出你的恢復、休息、負荷和體能年齡。一切都留在裝置上。"
           }
         },
         "pl": {
@@ -123517,7 +123520,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "選擇一個穿戴式訊號（靜息心率、HRV、睡眠、能量、體重…）以將其與此標記對齊。NOOP 會對每次讀數之前 %@ 內的訊號取平均值。"
+            "value": "選擇一個穿戴式訊號（靜息心率、HRV、睡眠、恢復、體重…）以將其與此標記對齊。NOOP 會對每次讀數之前 %@ 內的訊號取平均值。"
           }
         },
         "pl": {
@@ -124757,7 +124760,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "為能量、消耗、休息和睡眠提供資料"
+            "value": "為恢復、負荷、休息和睡眠提供資料"
           }
         },
         "pl": {
@@ -124815,7 +124818,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "為能量、消耗、休息、睡眠與健康監測提供資料"
+            "value": "為恢復、負荷、休息、睡眠與健康監測提供資料"
           }
         },
         "pl": {
@@ -124873,7 +124876,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "目前為消耗提供資料；累積足夠夜晚並確認解碼後，也會支援能量和休息"
+            "value": "目前為負荷提供資料；累積足夠夜晚並確認解碼後，也會支援恢復和休息"
           }
         },
         "pl": {
@@ -124931,7 +124934,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "為休息、消耗、體能年齡和步數提供資料，恢復校準完成後也會支援能量"
+            "value": "為休息、負荷、體能年齡和步數提供資料，恢復校準完成後也會支援恢復"
           }
         },
         "pl": {
@@ -124989,7 +124992,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "為即時主控台與消耗提供資料。不支援能量、休息或睡眠"
+            "value": "為即時主控台與負荷提供資料。不支援恢復、休息或睡眠"
           }
         },
         "pl": {
@@ -128506,7 +128509,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "已排名、考慮滯後：你的哪些習慣真正影響你的能量，外加你個人對酒精/咖啡因的劑量反應。"
+            "value": "已排名、考慮滯後：你的哪些習慣真正影響你的恢復，外加你個人對酒精/咖啡因的劑量反應。"
           }
         },
         "pl": {
@@ -128739,7 +128742,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "將所有為能量提供資料的基線重新錨定到你近期的夜晚。不會刪除任何已儲存的日期。"
+            "value": "將所有為恢復提供資料的基線重新錨定到你近期的夜晚。不會刪除任何已儲存的日期。"
           }
         },
         "pl": {
@@ -130985,7 +130988,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "重新校準能量基線"
+            "value": "重新校準恢復基線"
           }
         },
         "pl": {
@@ -131043,7 +131046,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "重新校準你的能量基線？"
+            "value": "重新校準你的恢復基線？"
           }
         },
         "pl": {
@@ -132221,7 +132224,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "記錄一次即時器械鍛鍊，當器械回報心率時以消耗評分"
+            "value": "記錄一次即時器械鍛鍊，當器械回報心率時以負荷評分"
           }
         },
         "pl": {
@@ -132343,7 +132346,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "恢復 / 能量"
+            "value": "恢復 / 恢復"
           }
         },
         "pl": {
@@ -132570,7 +132573,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "恢復，即 NOOP 的能量評分，主要由你的心率變異性相對於你個人基線的測量來主導。胸帶整晚密集地串流逐拍資料，因此能快速學會該基線。而 Apple Watch 則是對 HRV 進行取樣，全天加上夜間只有零星幾次讀數，所以訊號是真實的，但更稀疏。"
+            "value": "恢復，即 NOOP 的恢復評分，主要由你的心率變異性相對於你個人基線的測量來主導。胸帶整晚密集地串流逐拍資料，因此能快速學會該基線。而 Apple Watch 則是對 HRV 進行取樣，全天加上夜間只有零星幾次讀數，所以訊號是真實的，但更稀疏。"
           }
         },
         "pl": {
@@ -136534,7 +136537,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "休息 ↔ 能量"
+            "value": "休息 ↔ 恢復"
           }
         },
         "pl": {
@@ -136922,7 +136925,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "從今晚起，重新開始能量和你 HRV 基線大約 4 晚的建立過程。如果糟糕的第一週使你的基線出現偏差，可以使用它。你的歷史會保留。"
+            "value": "從今晚起，重新開始恢復和你 HRV 基線大約 4 晚的建立過程。如果糟糕的第一週使你的基線出現偏差，可以使用它。你的歷史會保留。"
           }
         },
         "pl": {
@@ -137102,7 +137105,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "靜息心率 ↔ 能量"
+            "value": "靜息心率 ↔ 恢復"
           }
         },
         "pl": {
@@ -143516,7 +143519,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "了解能量、消耗和休息如何計算，以及它們與 WHOOP 的區別。"
+            "value": "了解恢復、負荷和休息如何計算，以及它們與 WHOOP 的區別。"
           }
         },
         "pl": {
@@ -143632,7 +143635,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "查看是什麼塑造了你的能量"
+            "value": "查看是什麼塑造了你的恢復"
           }
         },
         "pl": {
@@ -153546,7 +153549,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "步數、活動能量和已記錄的鍛鍊會提供給消耗。密集且可靠。"
+            "value": "步數、活動能量和已記錄的鍛鍊會提供給負荷。密集且可靠。"
           }
         },
         "pl": {
@@ -153604,7 +153607,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "步數、活動能量和已記錄的鍛鍊會提供給你的消耗。密集且可靠。"
+            "value": "步數、活動能量和已記錄的鍛鍊會提供給你的負荷。密集且可靠。"
           }
         },
         "pl": {
@@ -160012,7 +160015,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "典型消耗"
+            "value": "典型負荷"
           }
         },
         "pl": {
@@ -161932,7 +161935,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "這就是為什麼僅用手錶時，能量一開始顯示「校準中」。NOOP 需要約七夜的 HRV 資料來了解你的正常水準。在此之前它寧可不給分數，也不猜測。基線確定後，你的能量會帶著信賴度顯示出來，與手環採用同樣的 0-100 量表。"
+            "value": "這就是為什麼僅用手錶時，恢復一開始顯示「校準中」。NOOP 需要約七夜的 HRV 資料來了解你的正常水準。在此之前它寧可不給分數，也不猜測。基線確定後，你的恢復會帶著信賴度顯示出來，與手環採用同樣的 0-100 量表。"
           }
         }
       }
@@ -161984,7 +161987,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "這就是為什麼僅靠手錶的能量一開始會顯示「校準中」。NOOP 需要大約七晚的 HRV 來了解對你而言正常是什麼樣子。在擁有這些資料之前，它會保留評分而不是去猜測。一旦基線設定完成，你的能量便會連同其信賴度一起出現，採用與手環相同的 0–100 量表。"
+            "value": "這就是為什麼僅靠手錶的恢復一開始會顯示「校準中」。NOOP 需要大約七晚的 HRV 來了解對你而言正常是什麼樣子。在擁有這些資料之前，它會保留評分而不是去猜測。一旦基線設定完成，你的恢復便會連同其信賴度一起出現，採用與手環相同的 0–100 量表。"
           }
         },
         "pl": {
@@ -162210,7 +162213,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "上方的平均值已被編輯。圖表、區間和消耗仍來自記錄的訓練。"
+            "value": "上方的平均值已被編輯。圖表、區間和負荷仍來自記錄的訓練。"
           }
         },
         "pl": {
@@ -164305,7 +164308,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "這會隨著手環同步逐步建立。在你佩戴並睡過一晚後，消耗和休息便會出現。能量需要大約四晚的睡眠來學習你的基線（在那之前你會看到「校準中」），並會在你最初的幾週裡持續變得更精準。在 WHOOP 5 或 MG 上，手環儲存的歷史很少，因此夜數可能上升緩慢，或在你連續佩戴幾晚之前一直停留在 0 / 4。這是它的同步限制，而非故障。匯入你的 WHOOP 匯出檔案以跳過等待。"
+            "value": "這會隨著手環同步逐步建立。在你佩戴並睡過一晚後，負荷和休息便會出現。恢復需要大約四晚的睡眠來學習你的基線（在那之前你會看到「校準中」），並會在你最初的幾週裡持續變得更精準。在 WHOOP 5 或 MG 上，手環儲存的歷史很少，因此夜數可能上升緩慢，或在你連續佩戴幾晚之前一直停留在 0 / 4。這是它的同步限制，而非故障。匯入你的 WHOOP 匯出檔案以跳過等待。"
           }
         },
         "pl": {
@@ -165597,7 +165600,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "這會重新開始能量和你 HRV 基線大約 4 晚的建立過程。你的歷史會保留。"
+            "value": "這會重新開始恢復和你 HRV 基線大約 4 晚的建立過程。你的歷史會保留。"
           }
         },
         "pl": {
@@ -165655,7 +165658,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "這會重新開始能量和你 HRV 基線大約 4 晚的建立過程。你的歷史會保留。如果糟糕的第一週（比如生病時佩戴）使你的基線出現偏差，可以使用它。"
+            "value": "這會重新開始恢復和你 HRV 基線大約 4 晚的建立過程。你的歷史會保留。如果糟糕的第一週（比如生病時佩戴）使你的基線出現偏差，可以使用它。"
           }
         },
         "pl": {
@@ -165771,7 +165774,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "本次工作階段對當天消耗的貢獻，即在鍛鍊期間所擷取的部分。"
+            "value": "本次工作階段對當天負荷的貢獻，即在鍛鍊期間所擷取的部分。"
           }
         },
         "pl": {
@@ -168017,7 +168020,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "明天的能量"
+            "value": "明天的恢復"
           }
         },
         "pl": {
@@ -168081,7 +168084,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "明天的能量估算 %1$lld 加減 %2$lld"
+            "value": "明天的恢復估算 %1$lld 加減 %2$lld"
           }
         },
         "pl": {
@@ -178402,7 +178405,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "是什麼塑造了你的能量"
+            "value": "是什麼塑造了你的恢復"
           }
         },
         "pl": {
@@ -182768,7 +182771,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "如果你今晚睡大約 %3$@，你醒來時的能量可能在 %1$lld ± %2$lld 左右。"
+            "value": "如果你今晚睡大約 %3$@，你醒來時的恢復可能在 %1$lld ± %2$lld 左右。"
           }
         },
         "pl": {
@@ -183012,7 +183015,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "你已連接。NOOP 現在正在讀取你的 Apple Watch 資料。你的能量評分將在最初一週左右進行校準，然後穩定下來。"
+            "value": "你已連接。NOOP 現在正在讀取你的 Apple Watch 資料。你的恢復評分將在最初一週左右進行校準，然後穩定下來。"
           }
         },
         "pl": {
@@ -183650,7 +183653,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "錶面上顯示你的能量（恢復），矩形卡片中則是消耗與休息。"
+            "value": "錶面上顯示你的恢復（恢復），矩形卡片中則是負荷與休息。"
           }
         },
         "pl": {
@@ -183708,7 +183711,7 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "你的能量評分會隨著時間從你的心率變異性、靜息心率等中學習出一個個人基線。如果糟糕的第一週使它出現偏差，你可以從今晚起重新學習它。你的歷史會保留。"
+            "value": "你的恢復評分會隨著時間從你的心率變異性、靜息心率等中學習出一個個人基線。如果糟糕的第一週使它出現偏差，你可以從今晚起重新學習它。你的歷史會保留。"
           }
         },
         "pl": {
@@ -214335,10 +214338,10 @@
       }
     },
     "Effort: exponential intensity scale": { "localizations": {
-      "de": { "stringUnit": { "state": "translated", "value": "Belastung: exponentielle Intensitätsskala" } }, "en": { "stringUnit": { "state": "translated", "value": "Effort: exponential intensity scale" } }, "es": { "stringUnit": { "state": "translated", "value": "Esfuerzo: escala de intensidad exponencial" } }, "fr": { "stringUnit": { "state": "translated", "value": "Effort : échelle d’intensité exponentielle" } }, "it": { "stringUnit": { "state": "translated", "value": "Sforzo: scala di intensità esponenziale" } }, "pl": { "stringUnit": { "state": "translated", "value": "Wysiłek: wykładnicza skala intensywności" } }, "pt-PT": { "stringUnit": { "state": "translated", "value": "Esforço: escala de intensidade exponencial" } }, "ru": { "stringUnit": { "state": "translated", "value": "Усилие: экспоненциальная шкала интенсивности" } }, "zh-Hans": { "stringUnit": { "state": "translated", "value": "消耗：指数强度曲线" } }, "zh-Hant": { "stringUnit": { "state": "translated", "value": "消耗：指數強度曲線" } }
+      "de": { "stringUnit": { "state": "translated", "value": "Belastung: exponentielle Intensitätsskala" } }, "en": { "stringUnit": { "state": "translated", "value": "Effort: exponential intensity scale" } }, "es": { "stringUnit": { "state": "translated", "value": "Esfuerzo: escala de intensidad exponencial" } }, "fr": { "stringUnit": { "state": "translated", "value": "Effort : échelle d’intensité exponentielle" } }, "it": { "stringUnit": { "state": "translated", "value": "Sforzo: scala di intensità esponenziale" } }, "pl": { "stringUnit": { "state": "translated", "value": "Wysiłek: wykładnicza skala intensywności" } }, "pt-PT": { "stringUnit": { "state": "translated", "value": "Esforço: escala de intensidade exponencial" } }, "ru": { "stringUnit": { "state": "translated", "value": "Усилие: экспоненциальная шкала интенсивности" } }, "zh-Hans": { "stringUnit": { "state": "translated", "value": "消耗：指数强度曲线" } }, "zh-Hant": { "stringUnit": { "state": "translated", "value": "負荷：指數強度曲線" } }
     } },
     "Scores Effort on an exponential intensity curve (Banister TRIMP) instead of the default heart-rate zones (Edwards). The default earns nothing below half of your heart-rate reserve, so an hour of lifting — where hard sets average out against the rests — can score close to zero. The exponential curve has no floor and weights short, hard efforts far more heavily. Re-scores your history, and both scales reach the same maximum. Off by default.": { "localizations": {
-      "de": { "stringUnit": { "state": "translated", "value": "Bewertet die Belastung mit einer exponentiellen Intensitätskurve (Banister-TRIMP) statt der voreingestellten Herzfrequenzzonen (Edwards). Die Voreinstellung zählt nichts unter der Hälfte deiner Herzfrequenzreserve, sodass eine Stunde Krafttraining – bei der sich harte Sätze mit den Pausen ausmitteln – nahezu null ergeben kann. Die exponentielle Kurve hat keine Untergrenze und gewichtet kurze, harte Belastungen deutlich stärker. Bewertet deine Historie neu; beide Skalen erreichen dasselbe Maximum. Standardmäßig aus." } }, "en": { "stringUnit": { "state": "translated", "value": "Scores Effort on an exponential intensity curve (Banister TRIMP) instead of the default heart-rate zones (Edwards). The default earns nothing below half of your heart-rate reserve, so an hour of lifting — where hard sets average out against the rests — can score close to zero. The exponential curve has no floor and weights short, hard efforts far more heavily. Re-scores your history, and both scales reach the same maximum. Off by default." } }, "es": { "stringUnit": { "state": "translated", "value": "Puntúa el Esfuerzo con una curva de intensidad exponencial (TRIMP de Banister) en lugar de las zonas de frecuencia cardíaca predeterminadas (Edwards). La opción predeterminada no cuenta nada por debajo de la mitad de tu reserva de frecuencia cardíaca, así que una hora de pesas —donde las series duras se compensan con los descansos— puede puntuar casi cero. La curva exponencial no tiene umbral y pondera mucho más los esfuerzos cortos e intensos. Vuelve a puntuar tu historial y ambas escalas alcanzan el mismo máximo. Desactivado por defecto." } }, "fr": { "stringUnit": { "state": "translated", "value": "Calcule l’Effort selon une courbe d’intensité exponentielle (TRIMP de Banister) au lieu des zones de fréquence cardiaque par défaut (Edwards). Le réglage par défaut ne compte rien en dessous de la moitié de votre réserve de fréquence cardiaque : une heure de musculation — où les séries dures se compensent avec les temps de repos — peut donc être notée presque zéro. La courbe exponentielle n’a pas de seuil et pondère bien davantage les efforts courts et intenses. Recalcule votre historique, et les deux échelles atteignent le même maximum. Désactivé par défaut." } }, "it": { "stringUnit": { "state": "translated", "value": "Calcola lo Sforzo su una curva di intensità esponenziale (TRIMP di Banister) invece delle zone di frequenza cardiaca predefinite (Edwards). L’impostazione predefinita non conta nulla sotto la metà della tua riserva di frequenza cardiaca, quindi un’ora di pesi — dove le serie intense si compensano con i recuperi — può valere quasi zero. La curva esponenziale non ha soglia e pesa molto di più gli sforzi brevi e intensi. Ricalcola la cronologia ed entrambe le scale raggiungono lo stesso massimo. Disattivato per impostazione predefinita." } }, "pl": { "stringUnit": { "state": "translated", "value": "Ocenia Wysiłek według wykładniczej krzywej intensywności (TRIMP Banistera) zamiast domyślnych stref tętna (Edwards). Ustawienie domyślne nie liczy niczego poniżej połowy rezerwy tętna, więc godzina treningu siłowego — gdzie ciężkie serie uśredniają się z przerwami — może dać wynik bliski zeru. Krzywa wykładnicza nie ma progu i znacznie mocniej waży krótkie, intensywne wysiłki. Przelicza historię, a obie skale osiągają to samo maksimum. Domyślnie wyłączone." } }, "pt-PT": { "stringUnit": { "state": "translated", "value": "Pontua o Esforço numa curva de intensidade exponencial (TRIMP de Banister) em vez das zonas de frequência cardíaca predefinidas (Edwards). A predefinição não conta nada abaixo de metade da tua reserva de frequência cardíaca, por isso uma hora de musculação — em que as séries duras se compensam com os descansos — pode pontuar quase zero. A curva exponencial não tem limiar e pondera muito mais os esforços curtos e intensos. Volta a pontuar o teu histórico e ambas as escalas atingem o mesmo máximo. Desativado por predefinição." } }, "ru": { "stringUnit": { "state": "translated", "value": "Оценивает Усилие по экспоненциальной кривой интенсивности (TRIMP Банистера) вместо стандартных пульсовых зон (Эдвардс). Стандартный вариант не засчитывает ничего ниже половины резерва пульса, поэтому час силовой тренировки — где тяжёлые подходы усредняются с отдыхом — может дать почти ноль. У экспоненциальной кривой нет порога, и она гораздо сильнее учитывает короткие интенсивные усилия. Пересчитывает историю, и обе шкалы достигают одного максимума. По умолчанию выключено." } }, "zh-Hans": { "stringUnit": { "state": "translated", "value": "以指数强度曲线（Banister TRIMP）计算消耗，而不是默认的心率区间（Edwards）。默认方式对低于心率储备一半的部分完全不计分，因此一小时力量训练——组间休息拉低了平均强度——可能几乎得零分。指数曲线没有下限，会大幅提高短时高强度努力的权重。会重新计算你的历史数据，两种标度的最高值相同。默认关闭。" } }, "zh-Hant": { "stringUnit": { "state": "translated", "value": "以指數強度曲線（Banister TRIMP）計算消耗，而不是預設的心率區間（Edwards）。預設方式對低於心率儲備一半的部分完全不計分，因此一小時重量訓練——組間休息拉低了平均強度——可能幾乎得零分。指數曲線沒有下限，會大幅提高短時高強度努力的權重。會重新計算你的歷史資料，兩種尺度的最高值相同。預設關閉。" } }
+      "de": { "stringUnit": { "state": "translated", "value": "Bewertet die Belastung mit einer exponentiellen Intensitätskurve (Banister-TRIMP) statt der voreingestellten Herzfrequenzzonen (Edwards). Die Voreinstellung zählt nichts unter der Hälfte deiner Herzfrequenzreserve, sodass eine Stunde Krafttraining – bei der sich harte Sätze mit den Pausen ausmitteln – nahezu null ergeben kann. Die exponentielle Kurve hat keine Untergrenze und gewichtet kurze, harte Belastungen deutlich stärker. Bewertet deine Historie neu; beide Skalen erreichen dasselbe Maximum. Standardmäßig aus." } }, "en": { "stringUnit": { "state": "translated", "value": "Scores Effort on an exponential intensity curve (Banister TRIMP) instead of the default heart-rate zones (Edwards). The default earns nothing below half of your heart-rate reserve, so an hour of lifting — where hard sets average out against the rests — can score close to zero. The exponential curve has no floor and weights short, hard efforts far more heavily. Re-scores your history, and both scales reach the same maximum. Off by default." } }, "es": { "stringUnit": { "state": "translated", "value": "Puntúa el Esfuerzo con una curva de intensidad exponencial (TRIMP de Banister) en lugar de las zonas de frecuencia cardíaca predeterminadas (Edwards). La opción predeterminada no cuenta nada por debajo de la mitad de tu reserva de frecuencia cardíaca, así que una hora de pesas —donde las series duras se compensan con los descansos— puede puntuar casi cero. La curva exponencial no tiene umbral y pondera mucho más los esfuerzos cortos e intensos. Vuelve a puntuar tu historial y ambas escalas alcanzan el mismo máximo. Desactivado por defecto." } }, "fr": { "stringUnit": { "state": "translated", "value": "Calcule l’Effort selon une courbe d’intensité exponentielle (TRIMP de Banister) au lieu des zones de fréquence cardiaque par défaut (Edwards). Le réglage par défaut ne compte rien en dessous de la moitié de votre réserve de fréquence cardiaque : une heure de musculation — où les séries dures se compensent avec les temps de repos — peut donc être notée presque zéro. La courbe exponentielle n’a pas de seuil et pondère bien davantage les efforts courts et intenses. Recalcule votre historique, et les deux échelles atteignent le même maximum. Désactivé par défaut." } }, "it": { "stringUnit": { "state": "translated", "value": "Calcola lo Sforzo su una curva di intensità esponenziale (TRIMP di Banister) invece delle zone di frequenza cardiaca predefinite (Edwards). L’impostazione predefinita non conta nulla sotto la metà della tua riserva di frequenza cardiaca, quindi un’ora di pesi — dove le serie intense si compensano con i recuperi — può valere quasi zero. La curva esponenziale non ha soglia e pesa molto di più gli sforzi brevi e intensi. Ricalcola la cronologia ed entrambe le scale raggiungono lo stesso massimo. Disattivato per impostazione predefinita." } }, "pl": { "stringUnit": { "state": "translated", "value": "Ocenia Wysiłek według wykładniczej krzywej intensywności (TRIMP Banistera) zamiast domyślnych stref tętna (Edwards). Ustawienie domyślne nie liczy niczego poniżej połowy rezerwy tętna, więc godzina treningu siłowego — gdzie ciężkie serie uśredniają się z przerwami — może dać wynik bliski zeru. Krzywa wykładnicza nie ma progu i znacznie mocniej waży krótkie, intensywne wysiłki. Przelicza historię, a obie skale osiągają to samo maksimum. Domyślnie wyłączone." } }, "pt-PT": { "stringUnit": { "state": "translated", "value": "Pontua o Esforço numa curva de intensidade exponencial (TRIMP de Banister) em vez das zonas de frequência cardíaca predefinidas (Edwards). A predefinição não conta nada abaixo de metade da tua reserva de frequência cardíaca, por isso uma hora de musculação — em que as séries duras se compensam com os descansos — pode pontuar quase zero. A curva exponencial não tem limiar e pondera muito mais os esforços curtos e intensos. Volta a pontuar o teu histórico e ambas as escalas atingem o mesmo máximo. Desativado por predefinição." } }, "ru": { "stringUnit": { "state": "translated", "value": "Оценивает Усилие по экспоненциальной кривой интенсивности (TRIMP Банистера) вместо стандартных пульсовых зон (Эдвардс). Стандартный вариант не засчитывает ничего ниже половины резерва пульса, поэтому час силовой тренировки — где тяжёлые подходы усредняются с отдыхом — может дать почти ноль. У экспоненциальной кривой нет порога, и она гораздо сильнее учитывает короткие интенсивные усилия. Пересчитывает историю, и обе шкалы достигают одного максимума. По умолчанию выключено." } }, "zh-Hans": { "stringUnit": { "state": "translated", "value": "以指数强度曲线（Banister TRIMP）计算消耗，而不是默认的心率区间（Edwards）。默认方式对低于心率储备一半的部分完全不计分，因此一小时力量训练——组间休息拉低了平均强度——可能几乎得零分。指数曲线没有下限，会大幅提高短时高强度努力的权重。会重新计算你的历史数据，两种标度的最高值相同。默认关闭。" } }, "zh-Hant": { "stringUnit": { "state": "translated", "value": "以指數強度曲線（Banister TRIMP）計算負荷，而不是預設的心率區間（Edwards）。預設方式對低於心率儲備一半的部分完全不計分，因此一小時重量訓練——組間休息拉低了平均強度——可能幾乎得零分。指數曲線沒有下限，會大幅提高短時高強度努力的權重。會重新計算你的歷史資料，兩種尺度的最高值相同。預設關閉。" } }
     } },
     "A cardiovascular load from time in heart-rate zones (Edwards TRIMP): each zone is weighted so harder ones count for more, summed into one daily figure. Settings offers an exponential alternative (Banister) that credits short, hard efforts more.": { "localizations": {
       "de": { "stringUnit": { "state": "translated", "value": "Eine kardiovaskuläre Last aus der Zeit in den Herzfrequenzzonen (Edwards-TRIMP): Jede Zone wird gewichtet, sodass härtere Zonen mehr zählen, aufsummiert zu einer Tageszahl. In den Einstellungen gibt es eine exponentielle Alternative (Banister), die kurze, harte Belastungen stärker anrechnet." } }, "en": { "stringUnit": { "state": "translated", "value": "A cardiovascular load from time in heart-rate zones (Edwards TRIMP): each zone is weighted so harder ones count for more, summed into one daily figure. Settings offers an exponential alternative (Banister) that credits short, hard efforts more." } }, "es": { "stringUnit": { "state": "translated", "value": "Una carga cardiovascular a partir del tiempo en las zonas de frecuencia cardíaca (TRIMP de Edwards): cada zona se pondera para que las más duras cuenten más, sumado en una sola cifra diaria. En Ajustes hay una alternativa exponencial (Banister) que valora más los esfuerzos cortos e intensos." } }, "fr": { "stringUnit": { "state": "translated", "value": "Une charge cardiovasculaire issue du temps passé dans les zones de fréquence cardiaque (TRIMP d’Edwards) : chaque zone est pondérée pour que les plus intenses comptent davantage, additionnée en un seul chiffre journalier. Les Réglages proposent une alternative exponentielle (Banister) qui valorise davantage les efforts courts et intenses." } }, "it": { "stringUnit": { "state": "translated", "value": "Un carico cardiovascolare dato dal tempo nelle zone di frequenza cardiaca (TRIMP di Edwards): ogni zona è ponderata in modo che quelle più dure contino di più, sommato in un unico dato giornaliero. Nelle Impostazioni c’è un’alternativa esponenziale (Banister) che premia di più gli sforzi brevi e intensi." } }, "pl": { "stringUnit": { "state": "translated", "value": "Obciążenie układu krążenia wynikające z czasu w strefach tętna (TRIMP Edwardsa): każda strefa jest ważona tak, aby trudniejsze liczyły się bardziej, zsumowane w jedną wartość dzienną. W Ustawieniach jest alternatywa wykładnicza (Banister), która mocniej docenia krótkie, intensywne wysiłki." } }, "pt-PT": { "stringUnit": { "state": "translated", "value": "Uma carga cardiovascular a partir do tempo nas zonas de frequência cardíaca (TRIMP de Edwards): cada zona é ponderada para que as mais difíceis contem mais, resumido num valor diário. Nas Definições existe uma alternativa exponencial (Banister) que valoriza mais os esforços curtos e intensos." } }, "ru": { "stringUnit": { "state": "translated", "value": "Сердечно-сосудистая нагрузка по времени в пульсовых зонах (TRIMP Эдвардса): каждая зона взвешивается так, что более тяжёлые учитываются сильнее, и всё суммируется в одно дневное значение. В настройках есть экспоненциальная альтернатива (Banister), которая сильнее засчитывает короткие интенсивные усилия." } }, "zh-Hans": { "stringUnit": { "state": "translated", "value": "根据你在各心率区间的时长得出的心血管负荷（Edwards TRIMP）：区间越高权重越大，汇总为一个每日数字。设置中提供指数式替代方案（Banister），会更看重短时高强度的努力。" } }, "zh-Hant": { "stringUnit": { "state": "translated", "value": "根據你在各心率區間停留時間得出的心血管負荷（Edwards TRIMP）：區間越高權重越大，加總成每日一個數字。設定中提供指數式替代方案（Banister），會更看重短時高強度的努力。" } }
@@ -215885,7 +215888,7 @@
         "pt-PT": {"stringUnit": {"state": "translated", "value": "Abrir o detalhe do esforço"}},
         "ru": {"stringUnit": {"state": "translated", "value": "Открыть подробности усилия"}},
         "zh-Hans": {"stringUnit": {"state": "translated", "value": "打开消耗详情"}},
-        "zh-Hant": {"stringUnit": {"state": "translated", "value": "開啟消耗詳情"}}
+        "zh-Hant": {"stringUnit": {"state": "translated", "value": "開啟負荷詳情"}}
     } },
     "Open your Rest detail" : { "localizations" : {
         "de": {"stringUnit": {"state": "translated", "value": "Erholung im Detail öffnen"}},
