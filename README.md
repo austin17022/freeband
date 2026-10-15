@@ -1,14 +1,25 @@
 <p align="center">
-  <img src="docs/assets/zhoop-icon.png" alt="Zhoop" width="96">
+  <img src="docs/assets/zhoop-icon.png" alt="FreeBand" width="96">
 </p>
 
-<h1 align="center">Zhoop</h1>
+<h1 align="center">FreeBand</h1>
 
-<p align="center"><b>A WHOOP companion for iPhone, built around one goal: losing weight.</b></p>
+<p align="center"><b>不用訂閱的 WHOOP 手環 App，台灣繁中版。</b></p>
 
-<p align="center"><sub>A personal fork of <a href="https://github.com/ryanbr/noop">NOOP</a>. Offline, on-device, no account, no cloud.</sub></p>
+<p align="center"><sub>Fork of <a href="https://github.com/hackyguru/zhoop">Zhoop</a> by hackyguru, itself a fork of <a href="https://github.com/ryanbr/noop">NOOP</a>. Offline, on-device, no account, no cloud. Not affiliated with WHOOP, Inc.</sub></p>
+
+## FreeBand 改了什麼
+
+- 減肥與睡眠頁面全部改成繁體中文
+- 記飲食多了「台灣常吃」：珍奶、超商、便當、牛肉麵等 16 種一鍵記錄（常見份量估算）
+- 第一次打開會請你填自己的身高、年齡、體重，不再套用原作者的身材
+
+心率、睡眠、恢復等數字是 NOOP 用公開研究方法自己算的估計值，**不是** WHOOP 官方演算法，也不是醫療器材。
 
 ---
+
+## Zhoop README (upstream)
+
 
 ## Why this fork exists
 
