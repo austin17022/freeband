@@ -25,6 +25,13 @@ struct CutTodayView: View {
     private var dayKey: String { Repository.localDayKey(Date()) }
     private var male: Bool { profile.sex != "female" }
 
+    /// The projection belongs to this plan. It must never replace a measured profile weight used
+    /// elsewhere in the app. Keep the existing 0.1 kg rounding for the plan's calorie estimates.
+    private var planningWeightKg: Double {
+        let base = plan.estimatedKg(beforeDay: dayKey, heightCm: profile.heightCm, age: profile.age, male: male)
+        return (base.kg * 10).rounded() / 10
+    }
+
     /// Today's burn: the full day's everyday burn plus workouts the strap has measured so far. The one
     /// figure the Burned tile, the fat card, today's bar and today's expected weight all use.
     private var burnedSoFar: Double {
@@ -32,7 +39,7 @@ struct CutTodayView: View {
     }
 
     private var budget: CutPlanStore.Budget {
-        plan.budget(weightKg: profile.weightKg, heightCm: profile.heightCm, age: profile.age, male: male,
+        plan.budget(weightKg: planningWeightKg, heightCm: profile.heightCm, age: profile.age, male: male,
                     activeKcal: burned?.activeKcal ?? 0, eaten: plan.eaten(day: dayKey))
     }
 
@@ -570,11 +577,6 @@ struct CutTodayView: View {
     }
 
     private func load() async {
-        // No scale: the start-of-day estimate IS the weight every calculation uses (BMR, allowance,
-        // strap calorie estimates). Rounded to 0.1 kg so it doesn't churn.
-        let base = plan.estimatedKg(beforeDay: dayKey, heightCm: profile.heightCm, age: profile.age, male: male)
-        let rounded = (base.kg * 10).rounded() / 10
-        if abs(profile.weightKg - rounded) >= 0.05 { profile.weightKg = rounded }
         let start = Calendar.current.startOfDay(for: Date())
         let from = Int(start.timeIntervalSince1970)
         let to = Int(Date().timeIntervalSince1970)
@@ -582,7 +584,7 @@ struct CutTodayView: View {
         if hr.isEmpty {
             burned = nil
         } else {
-            let up = UserProfile(weightKg: profile.weightKg, heightCm: profile.heightCm,
+            let up = UserProfile(weightKg: planningWeightKg, heightCm: profile.heightCm,
                                  age: Double(profile.age), sex: profile.sex)
             burned = Calories.estimateDayEnergy(hr, profile: up, hrmax: Double(profile.hrMax),
                                                 restingHR: repo.today?.restingHr.map(Double.init))
@@ -601,7 +603,7 @@ struct CutTodayView: View {
     /// stored value, computed once from each whole day's heart rate so the fat totals count them.
     private func backfillActive() async {
         let cal = Calendar.current
-        let up = UserProfile(weightKg: profile.weightKg, heightCm: profile.heightCm,
+        let up = UserProfile(weightKg: planningWeightKg, heightCm: profile.heightCm,
                              age: Double(profile.age), sex: profile.sex)
         for offset in 1..<120 {
             guard let start = cal.date(byAdding: .day, value: -offset, to: cal.startOfDay(for: Date())),
@@ -817,7 +819,9 @@ private struct CutPlanSheet: View {
                     }
                 }
                 Section {
-                    let b = plan.budget(weightKg: profile.weightKg, heightCm: profile.heightCm, age: profile.age,
+                    let base = plan.estimatedKg(beforeDay: Repository.localDayKey(Date()),
+                                                heightCm: profile.heightCm, age: profile.age, male: profile.sex != "female")
+                    let b = plan.budget(weightKg: (base.kg * 10).rounded() / 10, heightCm: profile.heightCm, age: profile.age,
                                         male: profile.sex != "female", activeKcal: 0, eaten: 0)
                     row("BMR", "\(Int(b.bmr.rounded())) kcal")
                     row("Maintenance (no workouts)", "\(Int(b.maintenance.rounded())) kcal")

@@ -2545,7 +2545,7 @@ struct SettingsView: View {
                 .accessibilityLabel("NOOP, the project FreeBand is built on, on GitHub")
 
                 // Project home — FreeBand's code lives on GitHub.
-                Link(destination: URL(string: "https://github.com/hackyguru/noop")!) {
+                Link(destination: URL(string: "https://github.com/austin17022/freeband")!) {
                     HStack(spacing: 10) {
                         Image(systemName: "chevron.left.forwardslash.chevron.right")
                             .foregroundStyle(StrandPalette.accent)

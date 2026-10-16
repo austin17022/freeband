@@ -28,7 +28,8 @@ final class UpdateChecker: ObservableObject {
 
     @Published var state: State = .idle
 
-    private static let endpoint = URL(string: "https://api.github.com/repos/hackyguru/noop/releases/latest")!
+    // Public betas are prereleases, which GitHub's releases/latest endpoint omits.
+    private static let endpoint = URL(string: "https://api.github.com/repos/austin17022/freeband/releases?per_page=100")!
 
     /// One release read. Shared by the button and the automatic check (#1659) so there is exactly one
     /// copy of the endpoint, the headers and the parsing — a second copy is how the two would drift into
@@ -44,16 +45,38 @@ final class UpdateChecker: ObservableObject {
             var req = URLRequest(url: Self.endpoint, timeoutInterval: 12)
             req.setValue("application/vnd.github+json", forHTTPHeaderField: "Accept")
             let (data, resp) = try await URLSession.shared.data(for: req)
-            guard (resp as? HTTPURLResponse)?.statusCode == 200,
-                  let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-                  let tag = json["tag_name"] as? String,
-                  let urlString = json["html_url"] as? String,
-                  let url = URL(string: urlString) else { return nil }
-            let latest = tag.hasPrefix("v") ? String(tag.dropFirst()) : tag
-            return Release(version: latest, url: url, notes: cleanNotes(json["body"] as? String ?? ""))
+            guard (resp as? HTTPURLResponse)?.statusCode == 200 else { return nil }
+            #if os(iOS)
+            return release(from: data, platform: "ios")
+            #else
+            return release(from: data, platform: "macos")
+            #endif
         } catch {
             return nil
         }
+    }
+
+    /// Ignore upstream/rolling releases and releases without an installable asset for this platform.
+    static func release(from data: Data, platform: String) -> Release? {
+        guard let releases = try? JSONSerialization.jsonObject(with: data) as? [[String: Any]] else { return nil }
+        let repository = "https://github.com/austin17022/freeband"
+        return releases.compactMap { json -> Release? in
+            guard json["draft"] as? Bool == false,
+                  let tag = json["tag_name"] as? String,
+                  tag.range(of: #"^freeband-v[0-9]+\.[0-9]+\.[0-9]+-b[0-9]+$"#, options: .regularExpression) != nil,
+                  let urlString = json["html_url"] as? String,
+                  urlString == "\(repository)/releases/tag/\(tag)",
+                  let url = URL(string: urlString),
+                  let assets = json["assets"] as? [[String: Any]] else { return nil }
+            let version = String(tag.dropFirst("freeband-v".count)).components(separatedBy: "-b")[0]
+            let suffix = platform == "ios" ? "ipa" : "zip"
+            let filename = "FreeBand-\(platform)-v\(version).\(suffix)"
+            guard assets.contains(where: {
+                $0["name"] as? String == filename &&
+                $0["browser_download_url"] as? String == "\(repository)/releases/download/\(tag)/\(filename)"
+            }) else { return nil }
+            return Release(version: version, url: url, notes: cleanNotes(json["body"] as? String ?? ""))
+        }.max { VersionCheck.isNewer($1.version, than: $0.version) }
     }
 
     func check(currentVersion: String) {

@@ -1,0 +1,212 @@
+name: FreeBand public beta (iOS)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: freeband-public-beta
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    if: github.repository == 'austin17022/freeband'
+    runs-on: macos-26
+    timeout-minutes: 60
+    outputs:
+      version: ${{ steps.package.outputs.version }}
+      build: ${{ steps.package.outputs.build }}
+      tag: ${{ steps.package.outputs.tag }}
+      ipa: ${{ steps.package.outputs.ipa }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          persist-credentials: false
+
+      - name: Test release metadata validation
+        run: |
+          set -euo pipefail
+          test -s docs/releases/freeband-public-beta.md
+          test -s Tools/test_freeband_release.py
+          python3 -m unittest discover -s Tools -p 'test_freeband*.py'
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Build iOS Release for sideloading
+        run: >-
+          xcodebuild -scheme NOOPiOS -configuration Release
+          -destination 'generic/platform=iOS' -derivedDataPath build/dd
+          CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=""
+          build
+
+      - name: Package and validate the iOS beta
+        id: package
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          apps=(build/dd/Build/Products/Release-iphoneos/*.app)
+          [ "${#apps[@]}" -eq 1 ] || { echo 'Expected exactly one iOS app'; exit 1; }
+          APP="${apps[0]}"
+          VERSION=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$APP/Info.plist")
+          BUILD=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleVersion' "$APP/Info.plist")
+          [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo 'Invalid marketing version'; exit 1; }
+          [[ "$BUILD" =~ ^[0-9]+$ ]] || { echo 'Invalid build number'; exit 1; }
+          TAG="freeband-v${VERSION}-b${BUILD}"
+          IPA="FreeBand-ios-v${VERSION}.ipa"
+          # Watch is not part of this beta. Keep the widget and its shared App Group.
+          rm -rf "$APP/Watch"
+          test -d "$APP/PlugIns/NOOPWidgets.appex"
+          Tools/prepare-ios-sideload-app.sh "$APP"
+          mkdir -p build/beta/Payload build/release
+          cp -R "$APP" build/beta/Payload/
+          (cd build/beta && zip -qr "../release/$IPA" Payload)
+          python3 Tools/freeband_release.py \
+            --ipa "build/release/$IPA" --tag "$TAG" \
+            --output build/release/altstore-source.json
+          (cd build/release && shasum -a 256 "$IPA" altstore-source.json > SHA256SUMS.txt)
+          cp docs/releases/freeband-public-beta.md build/release/release-notes.md
+          {
+            echo "version=$VERSION"
+            echo "build=$BUILD"
+            echo "tag=$TAG"
+            echo "ipa=$IPA"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Save recoverable release files
+        id: artifact
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: freeband-beta-${{ steps.package.outputs.tag }}
+          path: build/release/
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 30
+
+      - name: Summarize validated build
+        env:
+          TAG: ${{ steps.package.outputs.tag }}
+          ARTIFACT_URL: ${{ steps.artifact.outputs.artifact-url }}
+        run: |
+          {
+            printf '### FreeBand iOS beta: %s\n\n' "$TAG"
+            printf 'Release build, app/widget identity and manifest validation passed.\n\n'
+            printf '[Recoverable build artifacts](%s) (30-day retention)\n' "$ARTIFACT_URL"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TAG: ${{ needs.build.outputs.tag }}
+      VERSION: ${{ needs.build.outputs.version }}
+      BUILD: ${{ needs.build.outputs.build }}
+      IPA: ${{ needs.build.outputs.ipa }}
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: freeband-beta-${{ needs.build.outputs.tag }}
+          path: release
+
+      - name: Verify saved artifacts and refuse existing releases or tags
+        run: |
+          set -euo pipefail
+          (cd release && sha256sum --strict -c SHA256SUMS.txt)
+          test -s release/release-notes.md
+          # A network/authentication failure is not evidence that a release is absent.
+          gh api "repos/$GITHUB_REPOSITORY" --silent
+          # Listing with the publishing token includes drafts, which must also block a rerun.
+          gh api --paginate "repos/$GITHUB_REPOSITORY/releases" --jq '.[].tag_name' > release-tags.txt
+          if grep -Fxq "$TAG" release-tags.txt; then
+            echo "::error::$TAG already has a release or draft. Use a new source build number."
+            exit 1
+          fi
+          require_absent() {
+            local endpoint="$1" error_file
+            error_file=$(mktemp)
+            if gh api "$endpoint" --silent 2>"$error_file"; then
+              echo "::error::$TAG already exists. Use a new source build number; no assets or tags were changed."
+              rm "$error_file"
+              return 1
+            fi
+            if ! grep -q '(HTTP 404)' "$error_file"; then
+              cat "$error_file" >&2
+              rm "$error_file"
+              return 1
+            fi
+            rm "$error_file"
+          }
+          require_absent "repos/$GITHUB_REPOSITORY/releases/tags/$TAG"
+          require_absent "repos/$GITHUB_REPOSITORY/git/ref/tags/$TAG"
+
+      - name: Create draft prerelease and upload validated assets
+        run: |
+          set -euo pipefail
+          gh release create "$TAG" --repo "$GITHUB_REPOSITORY" \
+            --draft --prerelease --latest=false --target "$GITHUB_SHA" \
+            --title "FreeBand ${VERSION} public beta (build ${BUILD})" \
+            --notes-file release/release-notes.md
+          gh release upload "$TAG" --repo "$GITHUB_REPOSITORY" \
+            "release/$IPA" release/SHA256SUMS.txt release/altstore-source.json
+
+      - name: Verify the complete draft before publishing
+        run: |
+          set -euo pipefail
+          gh release view "$TAG" --repo "$GITHUB_REPOSITORY" \
+            --json isDraft,isPrerelease,assets > draft.json
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          release = json.loads(Path("draft.json").read_text())
+          expected = {os.environ["IPA"], "SHA256SUMS.txt", "altstore-source.json"}
+          assets = release["assets"]
+          assert release["isDraft"] and release["isPrerelease"], "Expected a draft prerelease"
+          assert len(assets) == len(expected), "Unexpected release asset count"
+          assert {asset["name"] for asset in assets} == expected, "Release assets do not match"
+          for asset in assets:
+              assert asset["size"] == (Path("release") / asset["name"]).stat().st_size, asset["name"]
+          PY
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --dir verified
+          cmp release/SHA256SUMS.txt verified/SHA256SUMS.txt
+          (cd verified && sha256sum --strict -c SHA256SUMS.txt)
+
+      - name: Pin the tag and publish the prerelease
+        run: |
+          set -euo pipefail
+          # Creating a ref is atomic and fails if another publisher took this tag meanwhile.
+          # Never update, delete or force-push an existing release tag.
+          gh api --method POST "repos/$GITHUB_REPOSITORY/git/refs" \
+            -f ref="refs/tags/$TAG" -f sha="$GITHUB_SHA" --silent
+          gh release edit "$TAG" --repo "$GITHUB_REPOSITORY" \
+            --draft=false --prerelease --latest=false --verify-tag
+          gh release view "$TAG" --repo "$GITHUB_REPOSITORY" \
+            --json isDraft,isPrerelease,url > published.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          release = json.loads(Path("published.json").read_text())
+          assert not release["isDraft"] and release["isPrerelease"], "Prerelease publication failed"
+          print(release["url"])
+          PY
+          {
+            printf '### Published FreeBand iOS public beta\n\n'
+            printf '[Release notes and downloads](https://github.com/%s/releases/tag/%s)\n\n' "$GITHUB_REPOSITORY" "$TAG"
+            printf '[AltStore source](https://github.com/%s/releases/download/%s/altstore-source.json)\n\n' "$GITHUB_REPOSITORY" "$TAG"
+            printf 'All three release assets were downloaded and verified before publication.\n'
+          } >> "$GITHUB_STEP_SUMMARY"
