@@ -1,3 +1,9 @@
+# FreeBand lineage
+
+FreeBand derives from [Zhoop by @hackyguru](https://github.com/hackyguru/zhoop), itself derived from [NOOP](https://github.com/ryanbr/noop). The upstream authors and contributors provide the Bluetooth, storage, and analytics foundation. Their license and required notices remain in LICENSE and NOTICE.
+
+Required Notice: Copyright 2026 NoopApp
+
 # Attribution
 
 NOOP is an independent, unofficial, local-first app for macOS, Android and iOS. It is not affiliated

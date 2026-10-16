@@ -2519,31 +2519,6 @@ struct SettingsView: View {
                         .foregroundStyle(StrandPalette.textTertiary)
                 }
 
-                // Credit: FreeBand is a fork of NOOP. The strap, sleep and analytics work is NOOP's.
-                Link(destination: URL(string: "https://github.com/ryanbr/noop")!) {
-                    HStack(spacing: 10) {
-                        Image(systemName: "heart.fill")
-                            .foregroundStyle(StrandPalette.accent)
-                            .accessibilityHidden(true)
-                        VStack(alignment: .leading, spacing: 1) {
-                            Text("Built on NOOP")
-                                .font(StrandFont.body)
-                                .foregroundStyle(StrandPalette.textPrimary)
-                            Text("FreeBand is a personal fork of NOOP, reshaped around my own fitness goals. The strap, sleep and analytics work is NOOP's and its contributors'.")
-                                .font(StrandFont.footnote)
-                                .foregroundStyle(StrandPalette.textTertiary)
-                                .fixedSize(horizontal: false, vertical: true)
-                        }
-                        Spacer()
-                        Image(systemName: "arrow.up.right")
-                            .font(.system(size: 12, weight: .semibold))
-                            .foregroundStyle(StrandPalette.textTertiary)
-                            .accessibilityHidden(true)
-                    }
-                    .contentShape(Rectangle())
-                }
-                .accessibilityLabel("NOOP, the project FreeBand is built on, on GitHub")
-
                 // Project home — FreeBand's code lives on GitHub.
                 Link(destination: URL(string: "https://github.com/austin17022/freeband")!) {
                     HStack(spacing: 10) {

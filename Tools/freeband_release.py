@@ -36,6 +36,8 @@ def make_source(ipa: Path, tag: str, date: str | None = None) -> dict:
         app, widget = infos
         if app.get("CFBundleIdentifier") != BUNDLE_ID:
             raise ValueError("IPA is not the FreeBand app")
+        if app.get("CFBundleDisplayName") != "FreeBand" or app.get("CFBundleName") != "FreeBand":
+            raise ValueError("Packaged app must display the FreeBand name")
         if widget.get("CFBundleIdentifier") != BUNDLE_ID + ".widgets":
             raise ValueError("Widget identity does not match FreeBand")
         group = "group.app.freeband.noop.staging"
@@ -72,11 +74,11 @@ def make_source(ipa: Path, tag: str, date: str | None = None) -> dict:
         "localizedDescription": description, "downloadURL": release_url,
         "size": ipa.stat().st_size, "minOSVersion": minimum,
     }
-    icon = f"https://raw.githubusercontent.com/{REPOSITORY}/main/docs/assets/zhoop-icon.png"
+    icon = f"https://raw.githubusercontent.com/{REPOSITORY}/main/Strand/Resources/Assets.xcassets/AppIcon.appiconset/icon_256x256.png"
     return {
         "name": "FreeBand", "identifier": "app.freeband.altstore", "sourceURL": SOURCE_URL,
         "subtitle": "An on-device WHOOP companion, with Traditional Chinese support.",
-        "description": "FreeBand public iOS beta. Based on Zhoop and NOOP; independent of WHOOP. Noncommercial use.",
+        "description": "FreeBand public iOS beta. Independent of WHOOP. Noncommercial use; original author credits are included in the repository notices.",
         "iconURL": icon, "website": f"https://github.com/{REPOSITORY}", "tintColor": "44E2B0",
         "apps": [{
             "name": "FreeBand", "bundleIdentifier": BUNDLE_ID, "developerName": "austin17022",

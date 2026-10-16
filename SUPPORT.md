@@ -2,7 +2,7 @@
 
 Start with the [FreeBand installation and pairing guide](docs/FREEBAND_INSTALL.md) and [public beta release notes](docs/releases/freeband-public-beta.md).
 
-For bugs, setup questions, or feature requests, search [FreeBand issues](https://github.com/austin17022/freeband/issues), then [open an issue](https://github.com/austin17022/freeband/issues/new/choose) if needed. FreeBand reports belong in this repository; upstream NOOP support channels do not maintain this fork.
+For bugs, setup questions, or feature requests, search [FreeBand issues](https://github.com/austin17022/freeband/issues), then [open an issue](https://github.com/austin17022/freeband/issues/new/choose) if needed. Send FreeBand reports to this repository.
 
 A useful report includes:
 

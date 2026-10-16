@@ -46,7 +46,7 @@ Install the new IPA over the existing FreeBand app with the **same signing accou
 
 **Weight loss food logs, weigh-ins, and goals are not included in `.noopbak`.** These records are stored separately on the phone. Keep the installed app and separately record any essential weight-loss entries before updating. Uninstalling can lose those records; a backup restore cannot recover omitted data.
 
-If the installer offers to replace the app by deleting it, or creates a second app instead of updating it, stop and resolve the signing or app-identity mismatch. Refresh an expired signature through the existing sideloader rather than uninstalling. NOOP and Zhoop use different app identities; this beta does not automatically migrate their data.
+If the installer offers to replace the app by deleting it, or creates a second app instead of updating it, stop and resolve the signing or app-identity mismatch. Refresh an expired signature through the existing sideloader rather than uninstalling. Other companion apps use different identities; this beta does not automatically migrate their data.
 
 Weight-loss projections now stay inside the plan instead of overwriting measured profile weight. To reset the plan's estimate from a scale reading, record a weigh-in **inside Weight loss**. Editing the general profile alone does not reset the plan's anchor.
 
@@ -62,4 +62,4 @@ Apple Health, widgets, and shared App Groups require capabilities allowed by the
 
 ## Source builds and upstream documentation
 
-Developers can use the inherited [iOS build guide](IOS.md) and [build documentation](BUILD.md). Those documents describe upstream NOOP and may name its downloads, sources, or historical limitations. Use this guide's FreeBand release and source URLs for the public beta. Android and macOS code remain in the repository but are not validated FreeBand beta releases.
+Developers can use the inherited [iOS build guide](IOS.md) and [build documentation](BUILD.md). Those inherited documents may name older downloads, sources, or historical limitations. Use this guide's FreeBand release and source URLs for the public beta. Android and macOS code remain in the repository but are not validated FreeBand beta releases.

@@ -16,6 +16,7 @@ class ReleaseManifestTests(unittest.TestCase):
         self.app = {
             "CFBundleIdentifier": "app.freeband.noop", "CFBundleShortVersionString": "11.8.1",
             "CFBundleVersion": "416", "MinimumOSVersion": "17.0",
+            "CFBundleDisplayName": "FreeBand", "CFBundleName": "FreeBand",
             "AppGroupIdentifier": "group.app.freeband.noop.staging",
             "NSBluetoothAlwaysUsageDescription": "Connect to a strap.",
             "NSMicrophoneUsageDescription": "Ask the coach by voice.",
@@ -26,9 +27,9 @@ class ReleaseManifestTests(unittest.TestCase):
 
     def generate(self, *, tag="freeband-v11.8.1-b416", extra=None, widget=True):
         with zipfile.ZipFile(self.ipa, "w") as archive:
-            archive.writestr("Payload/NOOP Staging.app/Info.plist", plistlib.dumps(self.app, fmt=plistlib.FMT_BINARY))
+            archive.writestr("Payload/FreeBand.app/Info.plist", plistlib.dumps(self.app, fmt=plistlib.FMT_BINARY))
             if widget:
-                archive.writestr("Payload/NOOP Staging.app/PlugIns/NOOPWidgets.appex/Info.plist", plistlib.dumps(self.widget))
+                archive.writestr("Payload/FreeBand.app/PlugIns/NOOPWidgets.appex/Info.plist", plistlib.dumps(self.widget))
             for path, content in (extra or {}).items():
                 archive.writestr(path, content)
         return make_source(self.ipa, tag, date="2026-10-16")
@@ -61,6 +62,11 @@ class ReleaseManifestTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Widget identity"):
             self.generate()
 
+    def test_rejects_an_upstream_display_name(self):
+        self.app["CFBundleName"] = "NOOP Staging"
+        with self.assertRaisesRegex(ValueError, "display the FreeBand name"):
+            self.generate()
+
     def test_rejects_different_app_groups(self):
         self.widget["AppGroupIdentifier"] = "group.someone.else"
         with self.assertRaisesRegex(ValueError, "App Group"):
@@ -82,7 +88,7 @@ class ReleaseManifestTests(unittest.TestCase):
 
     def test_rejects_watch_payload(self):
         with self.assertRaisesRegex(ValueError, "Watch"):
-            self.generate(extra={"Payload/NOOP Staging.app/Watch/App.app/Info.plist": b"x"})
+            self.generate(extra={"Payload/FreeBand.app/Watch/App.app/Info.plist": b"x"})
 
     def test_rejects_multiple_apps(self):
         with self.assertRaisesRegex(ValueError, "exactly one"):

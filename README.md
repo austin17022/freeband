@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/zhoop-icon.png" alt="FreeBand" width="96">
+  <img src="Strand/Resources/Assets.xcassets/AppIcon.appiconset/icon_256x256.png" alt="FreeBand" width="96">
 </p>
 
 <h1 align="center">FreeBand</h1>
@@ -31,14 +31,10 @@ Core tracking and calculations run locally. Automatic update checks are on by de
 
 Recovery, strain, sleep, calorie, and weight projections are estimates derived from the app's own methods, not WHOOP's official scores. FreeBand is not a medical device.
 
-## Credits and license
+## License
 
-FreeBand builds on [Zhoop by @hackyguru](https://github.com/hackyguru/zhoop) and [NOOP](https://github.com/ryanbr/noop). The [original Zhoop README](https://github.com/hackyguru/zhoop#readme) describes that fork's design. NOOP and its contributors provide the Bluetooth protocol, storage, and analytics foundation, with prior work from [johnmiddleton12/my-whoop](https://github.com/johnmiddleton12/my-whoop) and [b-nnett/goose](https://github.com/b-nnett/goose). See [ATTRIBUTION.md](ATTRIBUTION.md) and [NOTICE](NOTICE).
+FreeBand is available for noncommercial use under [PolyForm Noncommercial 1.0.0](LICENSE). Original author credits and required notices are preserved in [ATTRIBUTION.md](ATTRIBUTION.md) and [NOTICE](NOTICE).
 
-Most inherited documents, including [docs/IOS.md](docs/IOS.md) and [CHANGELOG.md](CHANGELOG.md), describe upstream NOOP. Use the FreeBand installation guide and release notes above for this beta.
+Use the FreeBand installation guide above for this beta. Other inherited developer documents may describe earlier project versions.
 
-Licensed under [PolyForm Noncommercial 1.0.0](LICENSE), permitting noncommercial use.
-
-Required Notice: Copyright 2026 NoopApp
-
-FreeBand is not affiliated with or endorsed by WHOOP, Inc., Zhoop, or the NOOP project. “WHOOP” identifies the hardware the app works with.
+FreeBand is independent of WHOOP, Inc. “WHOOP” identifies the compatible hardware.
