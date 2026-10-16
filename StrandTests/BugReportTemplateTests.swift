@@ -1,54 +1,48 @@
 import XCTest
 
-/// Guards the bug_report.yml fields the Test Centre deep-link binds (spec section 5.5). This is a
-/// text-level structural check (we ship no YAML parser in the app target): it asserts the test_profile
-/// dropdown id, the 14 dropdown options, the reworked attach guidance, the importer source options and
-/// the attach checkbox are all present, so a hand-edit can't silently break the prefilled report link.
+/// The public beta form collects enough context to reproduce a problem without requiring health logs.
+/// TestReportFlow only shares locally; it no longer opens or prefills a GitHub issue.
 final class BugReportTemplateTests: XCTestCase {
-
-    private func templateText() -> String {
-        // The repo root is two levels above StrandTests at build time; resolve from this file.
-        let here = URL(fileURLWithPath: #filePath)
-        let repoRoot = here.deletingLastPathComponent().deletingLastPathComponent()
-        let yml = repoRoot.appendingPathComponent(".github/ISSUE_TEMPLATE/bug_report.yml")
-        return (try? String(contentsOf: yml, encoding: .utf8)) ?? ""
+    private func templateText() throws -> String {
+        let repoRoot = URL(fileURLWithPath: #filePath)
+            .deletingLastPathComponent().deletingLastPathComponent()
+        return try String(contentsOf: repoRoot.appendingPathComponent(".github/ISSUE_TEMPLATE/bug_report.yml"),
+                          encoding: .utf8)
     }
 
-    func testHasTestProfileDropdownWithId() {
-        let t = templateText()
-        XCTAssertTrue(t.contains("id: test_profile"))
-        XCTAssertTrue(t.contains("type: dropdown"))
-    }
-
-    func testTestProfileOptionsCoverAllProfilesPlusEscapes() {
-        let t = templateText()
-        for label in ["Sleep & Rest", "Connection & Sync", "Workouts & GPS",
-                      "Display & Performance", "Import & Data Ingest", "Steps",
-                      "Notifications, Alarm & Wake", "Battery & Charging", "Recovery (Charge)",
-                      "HRV & Autonomic", "Sources, Fusion & Metric Decode",
-                      "Stress & Illness", "Longevity, Cycles & Haptics",
-                      "Log everything", "Not a test-mode bug"] {
-            XCTAssertTrue(t.contains(label), "missing test_profile option: \(label)")
+    func testCollectsDeviceAndInstallationContext() throws {
+        let text = try templateText()
+        for field in ["version", "device", "strap", "installation", "reproduction"] {
+            XCTAssertTrue(text.contains("id: \(field)\n"), "missing report field: \(field)")
         }
     }
 
-    func testSourceDropdownGainsImporters() {
-        let t = templateText()
-        for label in ["Oura import", "Fitbit import", "Garmin import",
-                      "Xiaomi import", "FIT / GPX / TCX import"] {
-            XCTAssertTrue(t.contains(label), "missing source importer: \(label)")
-        }
+    func testRequiresStepsAndAnActualResult() throws {
+        let text = try templateText()
+        XCTAssertTrue(text.contains("Steps, expected result, and actual result"))
+        XCTAssertTrue(text.contains("exact error message"))
     }
 
-    func testLogTextareaTellsToAttachZipNotPaste() {
-        let t = templateText()
-        XCTAssertTrue(t.contains("Attach your exported"))
-        XCTAssertTrue(t.contains("Do NOT paste the whole log inline"))
+    func testDoesNotRequireHealthDataOrLogUploads() throws {
+        let text = try templateText()
+        XCTAssertTrue(text.contains("Do not upload health databases, backups, food logs, raw strap logs"))
+        XCTAssertFalse(text.contains("Attach your exported"))
+        XCTAssertFalse(text.contains("I attached my exported"))
+        XCTAssertFalse(text.contains("id: log\n"))
     }
 
-    func testAttachZipCheckboxPresent() {
-        let t = templateText()
-        XCTAssertTrue(t.contains("I attached my exported NOOP"))
-        XCTAssertTrue(t.contains("not a screenshot of the Live screen"))
+    func testRequiresPublicDataReview() throws {
+        let text = try templateText()
+        XCTAssertTrue(text.contains("id: privacy\n"))
+        let privacy = try XCTUnwrap(text.components(separatedBy: "id: privacy\n").last)
+        XCTAssertTrue(privacy.contains("removed personal health data, device identifiers, and credentials"))
+        XCTAssertTrue(privacy.contains("required: true"))
+    }
+
+    func testRoutesHelpToFreeBand() throws {
+        let text = try templateText()
+        XCTAssertTrue(text.contains("https://github.com/austin17022/freeband/blob/main/docs/FREEBAND_INSTALL.md"))
+        XCTAssertFalse(text.contains("github.com/ryanbr/"))
+        XCTAssertFalse(text.contains("discord.com/"))
     }
 }
