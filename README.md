@@ -6,95 +6,39 @@
 
 <p align="center"><b>不用訂閱的 WHOOP 手環 App，台灣繁中版。</b></p>
 
-<p align="center"><sub>Fork of <a href="https://github.com/hackyguru/zhoop">Zhoop</a> by hackyguru, itself a fork of <a href="https://github.com/ryanbr/noop">NOOP</a>. Offline, on-device, no account, no cloud. Not affiliated with WHOOP, Inc.</sub></p>
+FreeBand is an independent iPhone companion for WHOOP straps, with Traditional Chinese screens and Taiwanese food presets. It connects over Bluetooth and stores tracking data on the phone. No FreeBand account or subscription is required.
 
-## FreeBand 改了什麼
+## Public iOS beta
 
-- 減肥與睡眠頁面全部改成繁體中文
-- 記飲食多了「台灣常吃」：珍奶、超商、便當、牛肉麵等 16 種一鍵記錄（常見份量估算）
-- 第一次打開會請你填自己的身高、年齡、體重，不再套用原作者的身材
-- 恢復 NOOP 全套功能：今天（恢復、負荷、睡眠三圓環）、趨勢、完整睡眠頁、壓力、運動、健康等，減肥頁獨立成一個分頁
-- 分數用語貼近 WHOOP：恢復、負荷
+**[Download FreeBand 11.8.1 (build 416)](https://github.com/austin17022/freeband/releases/tag/freeband-v11.8.1-b416)** · **[Install and pair](docs/FREEBAND_INSTALL.md)** · [Release notes](docs/releases/freeband-public-beta.md) · [Get help](SUPPORT.md)
 
-心率、睡眠、恢復等數字是 NOOP 用公開研究方法自己算的估計值，**不是** WHOOP 官方演算法，也不是醫療器材。
+Requires iOS 17 or later. Download `FreeBand-ios-v11.8.1.ipa` from the release and sign it with AltStore Classic, SideStore, or Sideloadly. This is a sideloaded beta, not an App Store or TestFlight release; opening the download in Safari does not install it. Free Apple accounts need periodic signing refreshes. The installation guide covers setup and signing limits.
 
----
+**Existing users: update in place with the same signing account and sideloader. Do not delete the app.** The inherited `.noopbak` backup does **not** include Weight loss food logs, weigh-ins, or goals. See the [upgrade notes](docs/FREEBAND_INSTALL.md#update-an-existing-install).
 
-## Zhoop README (upstream)
+## What FreeBand adds
 
+- Traditional Chinese weight-loss and sleep screens, plus 16 Taiwanese food presets with estimated portions.
+- A first-run profile for height, age, and weight.
+- Today, Trends, Sleep, and More, with Weight loss in a separate tab. Recovery, strain, workouts, stress, and health views remain available.
+- Weight-loss projections kept separate from measured profile weight. A weigh-in entered in Weight loss resets the plan's estimate and updates the profile.
 
-## Why this fork exists
+Connection and data sync were confirmed by the maintainer on the preceding build. This does not establish compatibility with every WHOOP model or iPhone. The code includes WHOOP 4.0 and 5.0/MG support; this beta still needs broader device testing. Apple Health and widgets depend on signing entitlements. Apple Watch is not included. Inherited Android and macOS code is outside this public beta and has not been validated for FreeBand.
 
-[NOOP](https://github.com/ryanbr/noop) is an excellent open-source, local-first app for WHOOP straps:
-it pairs over Bluetooth, keeps everything on your device, and computes recovery, strain, HRV and sleep
-itself. It shows a lot.
+## Data and estimates
 
-I forked it to cater to my own fitness needs. I'm on a calorie deficit, working out, and trying to get
-from where I am to a goal weight by a date. I wanted the app to answer one question every day: **how
-much can I eat today, and am I on track?** So Zhoop strips the app down to that and adds the weight-loss
-pieces NOOP doesn't have.
+Core tracking and calculations run locally. Automatic update checks are on by default and contact GitHub; they can be switched off in Settings. Optional Coach and export features may send data to the endpoint configured by the user. See [network access and permissions](docs/FREEBAND_INSTALL.md#network-access-and-permissions).
 
-## What's different from NOOP
+Recovery, strain, sleep, calorie, and weight projections are estimates derived from the app's own methods, not WHOOP's official scores. FreeBand is not a medical device.
 
-**Today** is rebuilt around the deficit:
+## Credits and license
 
-- **Calories left today**: a ring showing your food allowance minus what you've eaten, with your
-  workout burn against its target and a protein bar.
-- **Calories → fat**: burned − eaten = your deficit, shown as grams of fat (1 kg ≈ 7,700 kcal), with
-  a 7-day bar chart.
-- **Heart rate, strap battery, calories burned and steps**, straight from the strap.
-- **Food log** with calories and optional protein, and one-tap re-adding of recent foods.
-- **Goal**: set a goal weight and a date. Zhoop works out the daily deficit, splits it between eating
-  less and working out, and re-plans every day. It shows whether you're on track and when you'll
-  actually get there at your recent pace.
+FreeBand builds on [Zhoop by @hackyguru](https://github.com/hackyguru/zhoop) and [NOOP](https://github.com/ryanbr/noop). The [original Zhoop README](https://github.com/hackyguru/zhoop#readme) describes that fork's design. NOOP and its contributors provide the Bluetooth protocol, storage, and analytics foundation, with prior work from [johnmiddleton12/my-whoop](https://github.com/johnmiddleton12/my-whoop) and [b-nnett/goose](https://github.com/b-nnett/goose). See [ATTRIBUTION.md](ATTRIBUTION.md) and [NOTICE](NOTICE).
 
-Built for someone without a scale:
+Most inherited documents, including [docs/IOS.md](docs/IOS.md) and [CHANGELOG.md](CHANGELOG.md), describe upstream NOOP. Use the FreeBand installation guide and release notes above for this beta.
 
-- **Estimated weight**: the app tracks your weight from your logged deficit, day by day, and uses it
-  for every calculation. Enter a real weigh-in any time and it restarts from that.
-- **Logging buffer**: counts every logged calorie 10% higher (adjustable), because most people
-  under-log.
-
-And less of everything else:
-
-- Two tabs: **Today** and a simple **Sleep** tab (last night, the past 7 nights, averages).
-- Devices, Apple Health, plan settings and settings live behind the gear on Today.
-
-The Bluetooth, strap protocol, storage, sleep staging and heart-rate calorie model are NOOP's, unchanged.
-
-## Status
-
-This is a personal build for my iPhone and my WHOOP 5.0 / MG. The Mac and Android apps from NOOP are
-still in the repository but have not been reworked beyond the name. Everything is an estimate, not medical advice.
-
-## Build and run on an iPhone
-
-Needs a Mac with Xcode and [XcodeGen](https://github.com/yonaskolb/XcodeGen).
-
-1. `cp Config/BundleIdSecrets.example.xcconfig Config/BundleIdSecrets.xcconfig`, then set your own
-   `BUNDLE_ID_PREFIX` and `DEVELOPMENT_TEAM` in it. That file is gitignored.
-2. `xcodegen generate`
-3. Open `Strand.xcodeproj`, choose the **NOOPiOS** scheme and your iPhone, and run.
-
-Pairing a WHOOP 5.0 / MG needs the strap freed from the official WHOOP app first; see
-[docs/IOS.md](docs/IOS.md) and the pairing notes in [NOOP's README](https://github.com/ryanbr/noop#readme).
-
-## Credit
-
-All the hard work under the hood belongs to **NOOP** and its contributors:
-[github.com/ryanbr/noop](https://github.com/ryanbr/noop). NOOP in turn builds on
-[johnmiddleton12/my-whoop](https://github.com/johnmiddleton12/my-whoop) and
-[b-nnett/goose](https://github.com/b-nnett/goose); see [ATTRIBUTION.md](ATTRIBUTION.md) and [NOTICE](NOTICE).
-
-The documents in [`docs/`](docs/), [CHANGELOG.md](CHANGELOG.md) and the contributor guides are NOOP's
-own and describe NOOP. They're kept as they are.
-
-## License
-
-Zhoop is a fork of NOOP and stays under NOOP's license,
-[PolyForm Noncommercial 1.0.0](LICENSE): free for noncommercial use.
+Licensed under [PolyForm Noncommercial 1.0.0](LICENSE), permitting noncommercial use.
 
 Required Notice: Copyright 2026 NoopApp
 
-Zhoop is not affiliated with, endorsed by, or connected to WHOOP, Inc. or the NOOP project. "WHOOP"
-is used only to identify the hardware the app works with.
+FreeBand is not affiliated with or endorsed by WHOOP, Inc., Zhoop, or the NOOP project. “WHOOP” identifies the hardware the app works with.

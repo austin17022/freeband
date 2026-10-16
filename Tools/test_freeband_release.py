@@ -42,6 +42,7 @@ class ReleaseManifestTests(unittest.TestCase):
         for key in ("version", "buildVersion", "downloadURL", "size", "minOSVersion"):
             self.assertEqual(app[key], version[key])
         self.assertEqual(app["bundleIdentifier"], "app.freeband.noop")
+        self.assertIn(app["category"], {"developer", "entertainment", "games", "lifestyle", "other", "photo-video", "social", "utilities"})
         self.assertEqual(source["sourceURL"], "https://raw.githubusercontent.com/austin17022/freeband/main/altstore-source.json")
 
     def test_all_privacy_permissions_come_from_the_binary(self):

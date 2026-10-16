@@ -82,7 +82,7 @@ def make_source(ipa: Path, tag: str, date: str | None = None) -> dict:
             "name": "FreeBand", "bundleIdentifier": BUNDLE_ID, "developerName": "austin17022",
             "subtitle": "Your WHOOP strap, your iPhone, your data.",
             "localizedDescription": "Connect a WHOOP strap over Bluetooth. View heart rate, sleep, recovery and trends, and keep a food log with Taiwanese presets. Core tracking works on-device without a FreeBand account. Optional network features are described in the installation guide.",
-            "iconURL": icon, "tintColor": "44E2B0", "category": "healthcare-fitness",
+            "iconURL": icon, "tintColor": "44E2B0", "category": "lifestyle",
             "versions": [entry],
             "appPermissions": {
                 "entitlements": ["com.apple.developer.healthkit", "com.apple.developer.healthkit.access",
